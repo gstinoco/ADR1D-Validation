@@ -146,76 +146,76 @@
     ],
     "report": [
       {
-        "bytes": 83985,
+        "bytes": 84099,
         "path": "results/adr1d_validacion_numerica.tex",
-        "sha256": "43eaf684778ab9fbc330ace86ec62677b33b2e59e9876999a7886c650c3723c1"
+        "sha256": "29dc3db7427faef016b475cb874cbd7b0b1a1bdbe177442eec81c32ecee65f82"
       },
       {
-        "bytes": 656692,
+        "bytes": 656947,
         "path": "results/adr1d_validacion_numerica.pdf",
-        "sha256": "155ec4ceed7dcecea4f3e2b6f6c33893ae30cc202417bd4fa9959782cb91d9e5"
+        "sha256": "4cb88ca38d6a6e45a0fccadab5cdbd80d4b67ccbd797d8aaa6a3cf43201acc49"
       },
       {
-        "bytes": 80086,
+        "bytes": 80176,
         "path": "results/adr1d_numerical_validation_en.tex",
-        "sha256": "253d93330fca1beda43f09fe0cd07c2a93138ec0cd61dc5d5d8884bd60e146b3"
+        "sha256": "06113558ca0e763293e4b5cdb20d0b4c347cc3de3784162c23529875f7c24549"
       },
       {
-        "bytes": 655278,
+        "bytes": 655342,
         "path": "results/adr1d_numerical_validation_en.pdf",
-        "sha256": "6dbf56ba2516dc5b9adce013b824d6640dfa7ba97546d214cf26d4bca5c77899"
+        "sha256": "371085d8fbe1f6bc5a9a38222f228058a5c5fd041479d140a866147eea38fe15"
       }
     ],
     "source_code": [
       {
-        "bytes": 42485,
+        "bytes": 42484,
         "path": "src/benchmark_computational_cost.py",
-        "sha256": "03ecd624a3ac5d6271ad81370562fd79a6c643dbc5860c8b36d7cd0dd37eee0c"
+        "sha256": "dd3e3562aa7dda7033e391af8c95ab626165727a99874a8718cac57d81cb5f58"
       },
       {
-        "bytes": 61329,
+        "bytes": 61328,
         "path": "src/evaluate_locked_challenge.py",
-        "sha256": "ff2645916bea729e967e784c8fb304443a3cc1a4e4c9645577c3cbab253caaa0"
+        "sha256": "75f7a10d7f5dcdebe71058cda709e18e431b098c47acaa50fdffd3dc54e88cb7"
       },
       {
-        "bytes": 29511,
+        "bytes": 29510,
         "path": "src/generate_challenge_set.py",
-        "sha256": "3221da41aafb7d9c27ea659deb3f4b841f068727887677b82ec8bbc65c41ebab"
+        "sha256": "a90b1fd8cd9b0398e98c3498945dcc6be318e77e542fa84a45651d9680496518"
       },
       {
-        "bytes": 37017,
+        "bytes": 37016,
         "path": "src/generate_validation_figures.py",
-        "sha256": "568d3fbb4dbc79228fa7d51fcf0e839588e32bf9c1751554cdd93d56ad8fd524"
+        "sha256": "315022ca0cc7507ddf9547e9898181fe50ca8b7c06a0b4177382a9c5b83d0bb9"
       },
       {
-        "bytes": 18849,
+        "bytes": 18848,
         "path": "src/prepare_challenge_evaluation.py",
-        "sha256": "6632a34060be21d1c6d3b47b8f60ac3359fe60cc3ad1b6a93f5a692cda15d26d"
+        "sha256": "a8b4224e5ef0ef96531ef9c8605c0d7f4c0574c23d4f6937363b42de56343b71"
       },
       {
-        "bytes": 16148,
+        "bytes": 16147,
         "path": "src/reproduce_canonical_results.py",
-        "sha256": "1805a3818f284c92a711062abbf836f76cfda34c1197a56f497e2615496d6467"
+        "sha256": "b8d478a273d60620de2f72c76551bc32aa3a31b882eb1a1411875b198f12b245"
       },
       {
-        "bytes": 43779,
+        "bytes": 43778,
         "path": "src/run_numerical_reference.py",
-        "sha256": "b7256b92c71c5e57afc791c103f71babb4764f6662374a1575defe7da037a513"
+        "sha256": "8a306d63359d48c7c208bf9d19467056cb52d57c05cb85e5b068e5ad4e016607"
       },
       {
-        "bytes": 64279,
+        "bytes": 64278,
         "path": "src/validate_challenge_results.py",
-        "sha256": "030c6b717418068b05f2cd490dd8c28f43b03709e69e4ab3f9096a1cd5c78769"
+        "sha256": "745d4e8e9f574f9ab7a30aa77c8843d5fb385d6b4ebd66ddbba754b6bb85528c"
       },
       {
-        "bytes": 59042,
+        "bytes": 59041,
         "path": "src/validate_challenge_set.py",
-        "sha256": "54e40fafecc54fa87b3f61e45ec85a9cfa8de0523d7c8d21f223d95cd4614e4a"
+        "sha256": "b676c101d34bd988b98c30c2b1911a57b03520317fbf1774739121b43de5cb4c"
       },
       {
-        "bytes": 18599,
+        "bytes": 18598,
         "path": "src/validate_final_deliverable.py",
-        "sha256": "fae68eafc2f2d1a685debe6b9ca2a35e9dbbde8ddf4aabaa510ec0ea37d08dcc"
+        "sha256": "f3c828552cb80aaaa94fbafa59220eb61772a942df9807712ef39d231a3ca36b"
       }
     ]
   },

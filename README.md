@@ -102,6 +102,14 @@ speed-up.
 | Protocol version | 1.0.0 |
 | Report version | 1.1 |
 | Package version | 1.0.0 |
+| Scheduled development period | May--June 2025 |
+| Initial code release | May 2025 |
+| Last documentation update | July 2026 |
+
+The scheduled development period is distinct from the July 2026 protocol
+lock, validation execution, report revision, and archival-release preparation.
+Those later dates remain unchanged because they document when the recorded
+operations actually occurred.
 
 ---
 

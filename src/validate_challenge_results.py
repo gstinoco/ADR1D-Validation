@@ -36,7 +36,7 @@ This work received institutional and financial support from:
 
 Revision History
 ----------------
-- Initial release: July 2026.
+- Initial release: May 2025.
 - Last update: July 2026.
 ================================================================================
 """
