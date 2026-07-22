@@ -1,0 +1,121 @@
+{
+  "adr1d_ml": {
+    "byte_identical_to_source_report": true,
+    "canonical_artifacts": {
+      "03_modelos_ml_parametros/models/adr1d_parameter_models.joblib": "6890df1b30f5572611e5fcdc0d80a4f923e3877f93594b642c0d084c3f361cea",
+      "03_modelos_ml_parametros/models/model_manifest.json": "ace20ab6528e133e768dbf5d7ac0a3a042e73e71c29d7fedf79a672b4f039b39",
+      "03_modelos_ml_parametros/results/adr1d_decay_detectability_table.csv": "9a8e769211b9e9e6b33e4f1f31dc11719cb3192ad909f5d0bc230b791db5623f",
+      "03_modelos_ml_parametros/results/adr1d_modeling_table.csv": "dc493a05c70a8eaf3cf960ab6539caccd7ed4554b05d80e16373099291fd9cdf",
+      "03_modelos_ml_parametros/results/final_model_protocol.json": "56555a235dd6610a5bd3d6376cbe1123490fc50d28b6a0a0c0e8a0c342fdc2d3",
+      "03_modelos_ml_parametros/results/final_test_metrics.json": "43f282e29c6fe4f12954c86dd53a9283651b249bb8a61f9bd4073da93b5ed732",
+      "03_modelos_ml_parametros/results/final_test_predictions.csv": "4b23cea1de3c74a34e9769e190a23138fdf0a6def10c53b76273354641c223ff",
+      "03_modelos_ml_parametros/scripts/train_and_evaluate_final_models.py": "c759a9f1b1257a68bea0becaeeb6e82068f92b11bfb433ad98b6afe653bc8cae"
+    },
+    "canonical_inference_runs": 1,
+    "challenge_inference_runs": 0,
+    "reproduced_evidence": {
+      "model_bundle_loaded": true,
+      "model_sha256": "6890df1b30f5572611e5fcdc0d80a4f923e3877f93594b642c0d084c3f361cea",
+      "model_size_bytes": 7114591,
+      "post_test_tuning_performed": false,
+      "protocol_sha256": "56555a235dd6610a5bd3d6376cbe1123490fc50d28b6a0a0c0e8a0c342fdc2d3",
+      "recomputed_metric_checks": 4,
+      "reproduced_prediction_arrays": 5,
+      "status": "ok",
+      "test_rows": 45
+    },
+    "reproduced_report_sha256": "4a0348b6322a1a35da8806aec5bcf1e5038e5a58e229ab7723ad97ca6e80549c",
+    "source_validation_report": {
+      "path": "03_modelos_ml_parametros/results/final_model_validation.json",
+      "sha256": "4a0348b6322a1a35da8806aec5bcf1e5038e5a58e229ab7723ad97ca6e80549c"
+    },
+    "status": "reproduced",
+    "validator": {
+      "path": "03_modelos_ml_parametros/scripts/validate_final_models.py",
+      "sha256": "4d88c4d2c7b78595ece69b2c2cd6ab972088c2f798418697e99d05e7345b4ed7"
+    }
+  },
+  "adr1d_nn": {
+    "byte_identical_to_source_report": true,
+    "canonical_artifacts": {
+      "02_datasets/data_processed/synthetic_adr1d_field.csv": "24ab6f929410c4f8daf5293fc6a0dd9490919aff9f24fc2623b297d4b090439e",
+      "02_datasets/metadata/synthetic_adr1d_scenarios.csv": "e3a8383aa127787264bd41194e6617c6a5928c30b1f5aa7ba8c8b9a3fb8a5925",
+      "04_redes_neuronales_transporte/configs/final_evaluation_lock.json": "7499963af015d198639fa0e8f833ac61a61dca934d59226e23accf42367aa452",
+      "04_redes_neuronales_transporte/configs/final_model_protocol.json": "7880b2533f4f23c8f7144680ce56c7fcac5da1a3c5e35ed3e301dbb5b3dd0e33",
+      "04_redes_neuronales_transporte/models/adr1d_nn.pt": "9cc762b5e5f45d368f52a2da76695f4a762f4d70226db65357a1791b59762918",
+      "04_redes_neuronales_transporte/models/model_manifest.json": "732ce2cd35172ac083aaa27d8dac028b0a8d20c2abfa430194bdb9f306f4cbea",
+      "04_redes_neuronales_transporte/results/final_result_manifest.json": "9c01769bc44ce66fd8feefad207f1bdfd4807890f2941a9ae70da72cf6de4f48",
+      "04_redes_neuronales_transporte/results/final_test_fields.png": "bc596de07cfa0dfae7d856c700e9428e7051fb2856c9115d693aab883adecfdf",
+      "04_redes_neuronales_transporte/results/final_test_metrics.json": "21994b774c3f1bff640fba7ad0fcf6523b958f8d17180d83e68c6c689f6290b2",
+      "04_redes_neuronales_transporte/results/final_test_profiles.png": "3bac73d8f90499cc94ef10ee688ecc6d3c77c87c17886c0a869a8094d66c8d48",
+      "04_redes_neuronales_transporte/results/final_test_scenarios.csv": "cd6911d96d8e43430451115c7f3fe1fc4234404388a0b09bc9f7377dff422638",
+      "04_redes_neuronales_transporte/src/evaluate_final_test.py": "2395ec8446091d9463c7a208cbfbec46a1976b9a80f771570fc8a73ecb14d773"
+    },
+    "canonical_inference_runs": 1,
+    "challenge_inference_runs": 0,
+    "reproduced_evidence": {
+      "constrained_rows_reproduced_exactly": 4455,
+      "constraint_counts": {
+        "initial_interior": 2250,
+        "inlet_active": 166,
+        "inlet_inactive": 2039,
+        "neural_interior": 108000
+      },
+      "evaluation_lock_sha256": "7499963af015d198639fa0e8f833ac61a61dca934d59226e23accf42367aa452",
+      "final_output_digests_verified": 4,
+      "model_loaded_with_verified_interface": true,
+      "model_sha256": "9cc762b5e5f45d368f52a2da76695f4a762f4d70226db65357a1791b59762918",
+      "post_test_tuning_performed": false,
+      "result_manifest_sha256": "9c01769bc44ce66fd8feefad207f1bdfd4807890f2941a9ae70da72cf6de4f48",
+      "scalar_metric_checks": 60,
+      "scenario_rows_reproduced": 45,
+      "selected_scenarios_reproduced": [
+        "ADR1D-0030",
+        "ADR1D-0149",
+        "ADR1D-0188",
+        "ADR1D-0263"
+      ],
+      "status": "ok",
+      "test_rows_reproduced": 112455,
+      "test_scenarios_reproduced": 45
+    },
+    "reproduced_report_sha256": "ab6aeb3ddea35310ef9b232d0e0079cc0e67ea1090b8ab77e64478bdeea377de",
+    "source_validation_report": {
+      "path": "04_redes_neuronales_transporte/results/final_model_validation.json",
+      "sha256": "ab6aeb3ddea35310ef9b232d0e0079cc0e67ea1090b8ab77e64478bdeea377de"
+    },
+    "status": "reproduced",
+    "validator": {
+      "path": "04_redes_neuronales_transporte/src/validate_final_results.py",
+      "sha256": "b5b542b50db1eccccdc297a99e0e2407822ef5b8d06b0e1a0f14754e9d7b714b"
+    }
+  },
+  "challenge_artifacts_unchanged": true,
+  "challenge_guard": {
+    "challenge_inference_runs_before_canonical_audit": 0,
+    "locked_artifacts_verified": 7,
+    "path": "results/challenge_lock.json",
+    "sha256": "4c03dfebb4afdb8edbe884a16126241d127cd1b3fbce3bf60d0f10c3842ec27a"
+  },
+  "executed_at_utc": "2026-07-21T20:24:41Z",
+  "model_access": {
+    "adr1d_ml_canonical_inference_runs": 1,
+    "adr1d_ml_canonical_model_loads": 1,
+    "adr1d_ml_challenge_inference_runs": 0,
+    "adr1d_nn_canonical_inference_runs": 1,
+    "adr1d_nn_canonical_model_loads": 1,
+    "adr1d_nn_challenge_inference_runs": 0
+  },
+  "protocol": {
+    "protocol_id": "ADR1D-NUMERICAL-VALIDATION",
+    "protocol_version": "1.0.0",
+    "sha256": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9"
+  },
+  "report_version": "1.0.0",
+  "software": {
+    "implementation": "CPython",
+    "python": "3.12.2"
+  },
+  "source_artifacts_unchanged": true,
+  "status": "canonical_results_reproduced"
+}

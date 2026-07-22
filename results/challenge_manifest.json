@@ -1,0 +1,96 @@
+{
+  "analytical_generation_module": {
+    "path": "../02_datasets/scripts/generate_synthetic_adr1d_benchmark.py",
+    "sha256": "51dfb529f09c8ff29bc4fb59a9bc789460152492379fc017e371b3666825ebe6"
+  },
+  "field_summary": {
+    "columns": 8,
+    "initial_interior_maximum_abs_mg_L": 0.0,
+    "initial_time_maximum_abs_including_inlet_mg_L": 4.999999999999999,
+    "inlet_boundary_maximum_abs_error_mg_L": 0.0,
+    "maximum_concentration_mg_L": 4.999999999999999,
+    "minimum_concentration_mg_L": 0.0,
+    "nonzero_rows": 153864,
+    "rows": 299880
+  },
+  "files": {
+    "challenge_analytical_field": {
+      "bytes": 24848256,
+      "columns": 8,
+      "path": "data/challenge_analytical_field.csv",
+      "rows": 299880,
+      "sha256": "b846ce41b465e9c086b79493344c370686e56dafafeb6020ff0b8f0ba725818f"
+    },
+    "challenge_scenarios": {
+      "bytes": 26589,
+      "columns": 23,
+      "path": "data/challenge_scenarios.csv",
+      "rows": 120,
+      "sha256": "571c25a95dbf6478e57bf386f51c8bcc63798656ba320fda20cd07132a3a9c7a"
+    },
+    "challenge_sensor_observations": {
+      "bytes": 22856468,
+      "columns": 14,
+      "path": "data/challenge_sensor_observations.csv",
+      "rows": 176400,
+      "sha256": "b956de5cd41f817d443bfe86c9e7adad975266922ccafce01a2eb3b99f8aa2f9"
+    }
+  },
+  "generator": {
+    "path": "src/generate_challenge_set.py",
+    "sha256": "3221da41aafb7d9c27ea659deb3f4b841f068727887677b82ec8bbc65c41ebab"
+  },
+  "manifest_version": "1.0.0",
+  "model_access": {
+    "adr1d_ml_loaded": false,
+    "adr1d_nn_loaded": false,
+    "challenge_inference_runs": 0
+  },
+  "protocol_id": "ADR1D-NUMERICAL-VALIDATION",
+  "protocol_lock_sha256": "438039aead243c366e483f16a4453e4b1f1828b2b452f0ccc34605e10f74c091",
+  "protocol_sha256": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9",
+  "protocol_version": "1.0.0",
+  "scenario_summary": {
+    "columns": 23,
+    "design_component_counts": {
+      "boundary_profile": 24,
+      "latin_hypercube": 96
+    },
+    "regime_counts": {
+      "conservative": 30,
+      "decay_only": 30,
+      "retardation_and_decay": 30,
+      "retardation_only": 30
+    },
+    "rows": 120
+  },
+  "seeds": {
+    "parameter_seed": 2026072105,
+    "sensor_noise_seed": 2026072106
+  },
+  "sensor_summary": {
+    "base_scenarios": 120,
+    "below_detection_fraction": 0.8207596371882087,
+    "below_detection_rows": 144782,
+    "columns": 14,
+    "generated_standard_noise_mean": -0.0028116348027601343,
+    "generated_standard_noise_std": 0.9990660860732002,
+    "replicates_per_base_scenario": 5,
+    "rows": 176400,
+    "scenario_replicates": 600,
+    "sensor_positions": [
+      100.0,
+      250.0,
+      400.0,
+      600.0,
+      800.0,
+      1000.0
+    ],
+    "times_per_sensor": 49
+  },
+  "software": {
+    "implementation": "CPython",
+    "python": "3.12.2"
+  },
+  "status": "generated_before_model_inference"
+}

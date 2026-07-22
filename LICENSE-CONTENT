@@ -1,0 +1,58 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+================================================================
+
+Copyright (c) 2026
+
+Gerardo Tinoco-Guerrero
+Francisco J. Domínguez-Mota
+J. Alberto Guzmán-Torres
+
+Licensed material
+-----------------
+
+The technical report in `results/adr1d_validacion_numerica.pdf` and its LaTeX
+source, the tabular challenge data under `data/`, the derived evidence under
+`results/`, and the scientific figures under `results/figures/` are licensed
+under the Creative Commons Attribution 4.0 International license. They may be
+shared and adapted for any purpose, including commercial use, provided that
+users give appropriate credit, link to the license, and indicate whether
+changes were made. Attribution must not imply endorsement by the authors or
+their institutions.
+
+Complete license terms:
+
+https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+Human-readable summary:
+
+https://creativecommons.org/licenses/by/4.0/
+
+Recommended attribution
+-----------------------
+
+Tinoco-Guerrero, G., Domínguez-Mota, F. J., and Guzmán-Torres, J. A. (2026).
+Validación numérica independiente de ADR1D-ML y ADR1D-NN: Informe técnico
+reproducible, version 1.1. Universidad Michoacana de San Nicolás de Hidalgo.
+https://github.com/gstinoco/ADR1D-Validation
+
+Exclusions and third-party material
+-----------------------------------
+
+The following items are not covered by CC BY 4.0:
+
+- source code, which is governed by the MIT License in `LICENSE`;
+- profile photographs under `docs/team/`, which remain subject to the rights
+  of the people depicted and their respective rights holders;
+- institutional emblems and logos under `docs/partners/`, which remain the
+  property of their respective organizations and are used only for
+  identification and acknowledgment;
+- third-party software, publications, and referenced repositories, which
+  retain their own licenses and terms.
+
+Scope
+-----
+
+ADR1D, ADR1D-ML, and ADR1D-NN remain independently distributed works. This
+license applies only to the validation material actually included in this
+repository and does not replace the licenses of those upstream projects.
+

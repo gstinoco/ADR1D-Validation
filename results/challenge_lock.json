@@ -1,0 +1,72 @@
+{
+  "challenge_files": {
+    "challenge_analytical_field": {
+      "bytes": 24848256,
+      "columns": 8,
+      "path": "data/challenge_analytical_field.csv",
+      "rows": 299880,
+      "sha256": "b846ce41b465e9c086b79493344c370686e56dafafeb6020ff0b8f0ba725818f"
+    },
+    "challenge_scenarios": {
+      "bytes": 26589,
+      "columns": 23,
+      "path": "data/challenge_scenarios.csv",
+      "rows": 120,
+      "sha256": "571c25a95dbf6478e57bf386f51c8bcc63798656ba320fda20cd07132a3a9c7a"
+    },
+    "challenge_sensor_observations": {
+      "bytes": 22856468,
+      "columns": 14,
+      "path": "data/challenge_sensor_observations.csv",
+      "rows": 176400,
+      "sha256": "b956de5cd41f817d443bfe86c9e7adad975266922ccafce01a2eb3b99f8aa2f9"
+    }
+  },
+  "challenge_manifest": {
+    "bytes": 2880,
+    "path": "results/challenge_manifest.json",
+    "sha256": "0e274354843990728cfffacb92826940f38c432ef4e36086da6a28fcc987e1af"
+  },
+  "change_policy": {
+    "model_changes_or_threshold_tuning_allowed": false,
+    "regeneration_requires_new_protocol_version": true,
+    "silent_edits_allowed": false
+  },
+  "frozen_models": {
+    "adr1d_ml_sha256": "6890df1b30f5572611e5fcdc0d80a4f923e3877f93594b642c0d084c3f361cea",
+    "adr1d_nn_sha256": "9cc762b5e5f45d368f52a2da76695f4a762f4d70226db65357a1791b59762918"
+  },
+  "implementations": {
+    "generator": {
+      "path": "src/generate_challenge_set.py",
+      "sha256": "3221da41aafb7d9c27ea659deb3f4b841f068727887677b82ec8bbc65c41ebab"
+    },
+    "independent_validator": {
+      "path": "src/validate_challenge_set.py",
+      "sha256": "54e40fafecc54fa87b3f61e45ec85a9cfa8de0523d7c8d21f223d95cd4614e4a"
+    }
+  },
+  "independent_validation": {
+    "bytes": 4502,
+    "path": "results/challenge_validation.json",
+    "sha256": "1e0ecb69d033adbe252518b190e35e42fa47329f2ac2b22c9ae9bd4e2cc2ca08",
+    "status": "passed"
+  },
+  "lock_version": "1.0.0",
+  "locked_at_utc": "2026-07-21T20:19:22Z",
+  "protocol": {
+    "path": "configs/validation_protocol.json",
+    "protocol_id": "ADR1D-NUMERICAL-VALIDATION",
+    "protocol_version": "1.0.0",
+    "sha256": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9"
+  },
+  "state_at_lock": {
+    "acceptance_criteria_inspected_against_challenge_results": false,
+    "adr1d_ml_challenge_inference_runs": 0,
+    "adr1d_nn_challenge_inference_runs": 0,
+    "challenge_base_scenarios": 120,
+    "challenge_sensor_realizations": 600,
+    "traditional_numerical_solver_runs": 0
+  },
+  "status": "locked_before_model_inference"
+}

@@ -1,0 +1,24 @@
+.DS_Store
+.idea/
+.vscode/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.so
+
+# Local reproductions and optional upstream checkouts
+reproduction/
+upstream/
+
+# LaTeX build products; the reviewed PDF remains tracked explicitly
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+

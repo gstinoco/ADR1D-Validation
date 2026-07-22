@@ -1,0 +1,57 @@
+{
+  "figures": {
+    "results/figures/figure_01_parameter_model_validation.pdf": {
+      "bytes": 43824,
+      "sha256": "20b7ecf176d863fe48384955e69a962b0ef75684fc88f79fff45b92c6e403eff"
+    },
+    "results/figures/figure_01_parameter_model_validation.png": {
+      "bytes": 358399,
+      "sha256": "c8b13d48967347e68b4e08cde00887f3b2c33f9861e608a20750a3d029bc1356"
+    },
+    "results/figures/figure_02_neural_field_validation.pdf": {
+      "bytes": 63546,
+      "sha256": "a70b203468479d6fc75af0a3a2fbdcf32de9d27789a70a5de4511012d6305142"
+    },
+    "results/figures/figure_02_neural_field_validation.png": {
+      "bytes": 287690,
+      "sha256": "df392be3a89e1d0513fbc3503165628bcc20b72a4d01ef8c47e8310e7988c157"
+    },
+    "results/figures/figure_03_numerical_reference_convergence.pdf": {
+      "bytes": 37444,
+      "sha256": "e1fe7f894a5acb97846ee5a005a75cd848e2e5642eafec696984c5ef5c2b8300"
+    },
+    "results/figures/figure_03_numerical_reference_convergence.png": {
+      "bytes": 342112,
+      "sha256": "8ac2909ba1923e7a04a43e9c9d2854f29b8d4540a1c1967cbe8503a587520149"
+    },
+    "results/figures/figure_04_computational_cost.pdf": {
+      "bytes": 28468,
+      "sha256": "342223da5bb5cf4d3e24d936199b216edefddc82dcd3592b5594ae7230c40d9a"
+    },
+    "results/figures/figure_04_computational_cost.png": {
+      "bytes": 150988,
+      "sha256": "53194b7d7ad964d48d2e9de536fd1b3c16a956e21532ccabeb98f2afec27c773"
+    }
+  },
+  "generator": {
+    "matplotlib_version": "3.10.0",
+    "model_loading_or_inference": false,
+    "path": "src/generate_validation_figures.py",
+    "sha256": "568d3fbb4dbc79228fa7d51fcf0e839588e32bf9c1751554cdd93d56ad8fd524"
+  },
+  "selection": {
+    "criterion": "Maximum persisted ADR1D-NN scenario RMSE; ties resolved by ascending scenario identifier.",
+    "neural_field_case": "A5-CH-0056"
+  },
+  "sources": {
+    "configs/validation_protocol.json": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9",
+    "results/adr1d_ml_challenge_metrics.json": "ced95d0f72f1cf9c2c650a182c9ed2b265eee0f2d29e54ff922980cc6e9ed6e4",
+    "results/adr1d_ml_challenge_predictions.csv": "d60ffbf1ce634d37912842694ca6ad1ab9da312f0b5912b06815bedb405e7c84",
+    "results/adr1d_nn_challenge_metrics.json": "2e6351b04281be0e27487bddcd6b59a0e50464f1e79888e4f08475da79bc41d8",
+    "results/adr1d_nn_challenge_predictions.csv": "84e432987b0ca0c2a62de54a73bc94f5d5840eba9237bca9e89f53668871a618",
+    "results/adr1d_nn_challenge_scenarios.csv": "36376826de674b9df0cb681c7fa9a10f2067d0e9db2a9f4f7ba820c142e8a78f",
+    "results/computational_cost.json": "364efb82e406b362ae6eddb435fbdefc4772998e73e5bb31e79cdaeeebcaea26",
+    "results/numerical_reference_metrics.json": "8ddeb5c62c2545b5a7f1eb1a91cee44b2a16464f313338eb03a381ff6d44c126"
+  },
+  "status": "complete"
+}

@@ -1,0 +1,751 @@
+{
+  "acceptance": {
+    "checks": {
+      "all_fine_vs_analytical_rmse": true,
+      "all_medium_vs_fine_rmse": false,
+      "all_minimum_concentrations": true,
+      "selected_scenarios": true,
+      "three_grid_levels_per_scenario": true
+    },
+    "criteria": {
+      "fine_vs_analytical_rmse_max": 0.03,
+      "medium_vs_fine_rmse_max": 0.01,
+      "minimum_allowed_normalized_concentration": -1e-10
+    },
+    "overall_outcome": "mixed_evidence",
+    "scenarios_meeting_all_criteria": 14,
+    "scenarios_not_meeting_all_criteria": [
+      "A5-CH-0117",
+      "A5-CH-0087"
+    ],
+    "scenarios_total": 16
+  },
+  "aggregate": {
+    "fine_rmse": {
+      "maximum": 0.01866985040764215,
+      "median": 0.005463795296924826,
+      "percentile_90": 0.01783411421316744
+    },
+    "maximum_mass_balance_absolute_residual": 4.445985680306963e-13,
+    "maximum_mass_balance_relative_residual": 2.7213748980183507e-09,
+    "medium_vs_fine_rmse": {
+      "maximum": 0.010737407987680345,
+      "median": 0.003986581456616019,
+      "percentile_90": 0.01026571596872598
+    },
+    "minimum_normalized_concentration": 0.0,
+    "observed_error_order": {
+      "all_analytical_rmse_monotonically_decreasing": true,
+      "coarse_to_medium_median": 0.6809582839394794,
+      "medium_to_fine_median": 0.7505779663172214
+    }
+  },
+  "analytical_reference_validation": {
+    "compared_rows": 39200,
+    "maximum_absolute_difference": 6.497913318526116e-12,
+    "selected_scenarios": 16
+  },
+  "artifacts": {
+    "case_metrics": {
+      "bytes": 12709,
+      "columns": 26,
+      "path": "results/numerical_reference_cases.csv",
+      "rows": 48,
+      "sha256": "ba235cff01702d73f2b068e74b28fa8223fda2b9e9a79bb3fcde813f2d067ad6"
+    }
+  },
+  "challenge_analytical_field_sha256": "b846ce41b465e9c086b79493344c370686e56dafafeb6020ff0b8f0ba725818f",
+  "challenge_lock_sha256": "4c03dfebb4afdb8edbe884a16126241d127cd1b3fbce3bf60d0f10c3842ec27a",
+  "challenge_scenarios_sha256": "571c25a95dbf6478e57bf386f51c8bcc63798656ba320fda20cd07132a3a9c7a",
+  "execution": {
+    "grid_levels_per_scenario": 3,
+    "selected_scenarios": 16,
+    "source_switch_times_inserted_exactly": true,
+    "thread_scope": "Numerical reference executed under caller-provided process thread settings.",
+    "total_runtime_seconds": 0.6327500839979621,
+    "traditional_solver_runs": 48
+  },
+  "implementation": {
+    "equation": "dC/dt = D_eff*d2C/dx2 - v_eff*dC/dx - lambda*C",
+    "inlet_boundary": "Exact finite-pulse Dirichlet concentration.",
+    "method": "Cell-centered finite volume with Scharfetter-Gummel exponential fitting for advection-dispersion fluxes and fully implicit backward Euler time integration.",
+    "outlet_boundary": "Advective outflow with zero diffusive flux.",
+    "script_path": "src/run_numerical_reference.py",
+    "script_sha256": "b7256b92c71c5e57afc791c103f71babb4764f6662374a1575defe7da037a513"
+  },
+  "protocol_sha256": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9",
+  "reporting_scope": "The timing is descriptive for this execution and is not the seven-repetition computational-cost benchmark.",
+  "scenario_evidence": [
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.0018192066408603315,
+        "medium_vs_restricted_fine": 0.0009376200146131664
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.17948678310900976,
+        "medium_to_fine": 0.05103627579023068
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "conservative",
+      "rmse_by_level": {
+        "coarse": 0.006500118228078674,
+        "fine": 0.005540218593777289,
+        "medium": 0.005739715289744953
+      },
+      "scenario_id": "A5-CH-0026",
+      "selection_criterion": "minimum_peclet_number",
+      "selection_order_within_regime": 1,
+      "truth": {
+        "advective_travel_time_s": 20000.0,
+        "damkohler_number": 0.0,
+        "peclet_number": 2.5
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.013047652703920835,
+        "medium_vs_restricted_fine": 0.009842195545418405
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.4882140520500835,
+        "medium_to_fine": 0.5624449185687489
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "conservative",
+      "rmse_by_level": {
+        "coarse": 0.038674143429062856,
+        "fine": 0.01866985040764215,
+        "medium": 0.027571070551932884
+      },
+      "scenario_id": "A5-CH-0027",
+      "selection_criterion": "maximum_peclet_number",
+      "selection_order_within_regime": 2,
+      "truth": {
+        "advective_travel_time_s": 2857.14285714,
+        "damkohler_number": 0.0,
+        "peclet_number": 350.0
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.006999199722894098,
+        "medium_vs_restricted_fine": 0.003634107250143733
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.9635034697921423,
+        "medium_to_fine": 0.9810773186977918
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "conservative",
+      "rmse_by_level": {
+        "coarse": 0.014373584780503877,
+        "fine": 0.003734117233580597,
+        "medium": 0.007370919185032583
+      },
+      "scenario_id": "A5-CH-0025",
+      "selection_criterion": "maximum_advective_travel_time",
+      "selection_order_within_regime": 3,
+      "truth": {
+        "advective_travel_time_s": 20000.0,
+        "damkohler_number": 0.0,
+        "peclet_number": 50.0
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.0069415984959858065,
+        "medium_vs_restricted_fine": 0.003894639354364955
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.8815117345265024,
+        "medium_to_fine": 0.9293532069960324
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "conservative",
+      "rmse_by_level": {
+        "coarse": 0.015074461951574879,
+        "fine": 0.004296523133175061,
+        "medium": 0.008182393216843886
+      },
+      "scenario_id": "A5-CH-0021",
+      "selection_criterion": "normalized_parameter_space_medoid",
+      "selection_order_within_regime": 4,
+      "truth": {
+        "advective_travel_time_s": 5822.72097652,
+        "damkohler_number": 0.0,
+        "peclet_number": 31.481940928
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.0018178260637838031,
+        "medium_vs_restricted_fine": 0.0009369125573053285
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.18868129428739872,
+        "medium_to_fine": 0.05454732849857784
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "decay_only",
+      "rmse_by_level": {
+        "coarse": 0.006376701328993802,
+        "fine": 0.005387372000072364,
+        "medium": 0.005594964648956509
+      },
+      "scenario_id": "A5-CH-0056",
+      "selection_criterion": "minimum_peclet_number",
+      "selection_order_within_regime": 1,
+      "truth": {
+        "advective_travel_time_s": 20000.0,
+        "damkohler_number": 0.0282842712475,
+        "peclet_number": 2.5
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.013018600666955947,
+        "medium_vs_restricted_fine": 0.009819635542708658
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.48825183945947037,
+        "medium_to_fine": 0.5624647109831736
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "decay_only",
+      "rmse_by_level": {
+        "coarse": 0.038584700120449344,
+        "fine": 0.01862592846423622,
+        "medium": 0.027506585315804678
+      },
+      "scenario_id": "A5-CH-0057",
+      "selection_criterion": "maximum_peclet_number",
+      "selection_order_within_regime": 2,
+      "truth": {
+        "advective_travel_time_s": 2857.14285714,
+        "damkohler_number": 0.00404061017821,
+        "peclet_number": 350.0
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.00936300675256681,
+        "medium_vs_restricted_fine": 0.0056534682046818505
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.8175443502800376,
+        "medium_to_fine": 0.9002492940860882
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "decay_only",
+      "rmse_by_level": {
+        "coarse": 0.02134008754921573,
+        "fine": 0.006487670484556591,
+        "medium": 0.012108513340606324
+      },
+      "scenario_id": "A5-CH-0043",
+      "selection_criterion": "maximum_damkohler_number",
+      "selection_order_within_regime": 3,
+      "truth": {
+        "advective_travel_time_s": 6718.16078826,
+        "damkohler_number": 0.132299668659,
+        "peclet_number": 74.4213642545
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.00848593874134411,
+        "medium_vs_restricted_fine": 0.005139404116889961
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.775805724761862,
+        "medium_to_fine": 0.8291292762862984
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "decay_only",
+      "rmse_by_level": {
+        "coarse": 0.019938153509259156,
+        "fine": 0.0065546779589753836,
+        "medium": 0.011645124646237619
+      },
+      "scenario_id": "A5-CH-0053",
+      "selection_criterion": "normalized_parameter_space_medoid",
+      "selection_order_within_regime": 4,
+      "truth": {
+        "advective_travel_time_s": 4038.17660395,
+        "damkohler_number": 0.00441450148605,
+        "peclet_number": 50.3266794772
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.0014302938703158333,
+        "medium_vs_restricted_fine": 0.0007312394607193596
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.2609448364095074,
+        "medium_to_fine": 0.0855966600139695
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "retardation_and_decay",
+      "rmse_by_level": {
+        "coarse": 0.004497958549135864,
+        "fine": 0.003537496865541055,
+        "medium": 0.0037537316822756944
+      },
+      "scenario_id": "A5-CH-0116",
+      "selection_criterion": "minimum_peclet_number",
+      "selection_order_within_regime": 1,
+      "truth": {
+        "advective_travel_time_s": 41000.0,
+        "damkohler_number": 0.0579827560573,
+        "peclet_number": 2.5
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": false,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.015148936742405576,
+        "medium_vs_restricted_fine": 0.010689236392033554
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.5861108431170967,
+        "medium_to_fine": 0.6720266563481445
+      },
+      "outcome": "mixed_evidence",
+      "regime": "retardation_and_decay",
+      "rmse_by_level": {
+        "coarse": 0.040578280467356204,
+        "fine": 0.016965103501371388,
+        "medium": 0.027030662808449638
+      },
+      "scenario_id": "A5-CH-0117",
+      "selection_criterion": "maximum_peclet_number",
+      "selection_order_within_regime": 2,
+      "truth": {
+        "advective_travel_time_s": 5857.14285714,
+        "damkohler_number": 0.00828325086533,
+        "peclet_number": 350.0
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.003723491820470792,
+        "medium_vs_restricted_fine": 0.0020792890731585684
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.8917152038822697,
+        "medium_to_fine": 0.9401022013094922
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "retardation_and_decay",
+      "rmse_by_level": {
+        "coarse": 0.008056080285770055,
+        "fine": 0.0022630377583917807,
+        "medium": 0.004342009424045985
+      },
+      "scenario_id": "A5-CH-0119",
+      "selection_criterion": "maximum_damkohler_number",
+      "selection_order_within_regime": 3,
+      "truth": {
+        "advective_travel_time_s": 15000.0,
+        "damkohler_number": 0.3,
+        "peclet_number": 44.72135955
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.007354281915492981,
+        "medium_vs_restricted_fine": 0.0040785235588670825
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.8954322977144616,
+        "medium_to_fine": 0.937278705115829
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "retardation_and_decay",
+      "rmse_by_level": {
+        "coarse": 0.01586883425609979,
+        "fine": 0.004454962358537361,
+        "medium": 0.008530864490819108
+      },
+      "scenario_id": "A5-CH-0110",
+      "selection_criterion": "normalized_parameter_space_medoid",
+      "selection_order_within_regime": 4,
+      "truth": {
+        "advective_travel_time_s": 14354.5626614,
+        "damkohler_number": 0.01751148911,
+        "peclet_number": 51.7281755607
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.0014315501153415286,
+        "medium_vs_restricted_fine": 0.0007318809070328195
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.24553416692614563,
+        "medium_to_fine": 0.07900715947137453
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "retardation_only",
+      "rmse_by_level": {
+        "coarse": 0.004609599361036464,
+        "fine": 0.003681005841633019,
+        "medium": 0.0038882128528236336
+      },
+      "scenario_id": "A5-CH-0086",
+      "selection_criterion": "minimum_peclet_number",
+      "selection_order_within_regime": 1,
+      "truth": {
+        "advective_travel_time_s": 41000.0,
+        "damkohler_number": 0.0,
+        "peclet_number": 2.5
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": false,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.01521686161963299,
+        "medium_vs_restricted_fine": 0.010737407987680345
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.58608596009205,
+        "medium_to_fine": 0.672004231012392
+      },
+      "outcome": "mixed_evidence",
+      "regime": "retardation_only",
+      "rmse_by_level": {
+        "coarse": 0.040761587514472515,
+        "fine": 0.017042299962098658,
+        "medium": 0.027153238598042754
+      },
+      "scenario_id": "A5-CH-0087",
+      "selection_criterion": "maximum_peclet_number",
+      "selection_order_within_regime": 2,
+      "truth": {
+        "advective_travel_time_s": 5857.14285714,
+        "damkohler_number": 0.0,
+        "peclet_number": 350.0
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.0045975071604371295,
+        "medium_vs_restricted_fine": 0.0022300074850599896
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 1.033323676260972,
+        "medium_to_fine": 1.0200697783887889
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "retardation_only",
+      "rmse_by_level": {
+        "coarse": 0.009030121382895146,
+        "fine": 0.002175507402521837,
+        "medium": 0.0044119660953320025
+      },
+      "scenario_id": "A5-CH-0085",
+      "selection_criterion": "maximum_advective_travel_time",
+      "selection_order_within_regime": 3,
+      "truth": {
+        "advective_travel_time_s": 41000.0,
+        "damkohler_number": 0.0,
+        "peclet_number": 50.0
+      }
+    },
+    {
+      "checks": {
+        "fine_vs_analytical_rmse": true,
+        "medium_vs_fine_rmse": true,
+        "minimum_normalized_concentration": true
+      },
+      "intergrid_rmse": {
+        "coarse_vs_restricted_medium": 0.008860627937704698,
+        "medium_vs_restricted_fine": 0.005088856090098979
+      },
+      "minimum_normalized_concentration": 0.0,
+      "observed_error_order": {
+        "coarse_to_medium": 0.8405786908497638,
+        "medium_to_fine": 0.8775633005568109
+      },
+      "outcome": "meets_all_pre_specified_criteria",
+      "regime": "retardation_only",
+      "rmse_by_level": {
+        "coarse": 0.01977234018730765,
+        "fine": 0.006009603203526346,
+        "medium": 0.011041260954320904
+      },
+      "scenario_id": "A5-CH-0063",
+      "selection_criterion": "normalized_parameter_space_medoid",
+      "selection_order_within_regime": 4,
+      "truth": {
+        "advective_travel_time_s": 7183.48177273,
+        "damkohler_number": 0.0,
+        "peclet_number": 58.5823834037
+      }
+    }
+  ],
+  "selection": {
+    "selected_scenarios": [
+      {
+        "advective_travel_time_s": 20000.0,
+        "damkohler_number": 0.0,
+        "medoid_total_distance": null,
+        "peclet_number": 2.5,
+        "regime": "conservative",
+        "scenario_id": "A5-CH-0026",
+        "selection_criterion": "minimum_peclet_number",
+        "selection_order_within_regime": 1
+      },
+      {
+        "advective_travel_time_s": 2857.14285714,
+        "damkohler_number": 0.0,
+        "medoid_total_distance": null,
+        "peclet_number": 350.0,
+        "regime": "conservative",
+        "scenario_id": "A5-CH-0027",
+        "selection_criterion": "maximum_peclet_number",
+        "selection_order_within_regime": 2
+      },
+      {
+        "advective_travel_time_s": 20000.0,
+        "damkohler_number": 0.0,
+        "medoid_total_distance": null,
+        "peclet_number": 50.0,
+        "regime": "conservative",
+        "scenario_id": "A5-CH-0025",
+        "selection_criterion": "maximum_advective_travel_time",
+        "selection_order_within_regime": 3
+      },
+      {
+        "advective_travel_time_s": 5822.72097652,
+        "damkohler_number": 0.0,
+        "medoid_total_distance": 20.43794878328159,
+        "peclet_number": 31.481940928,
+        "regime": "conservative",
+        "scenario_id": "A5-CH-0021",
+        "selection_criterion": "normalized_parameter_space_medoid",
+        "selection_order_within_regime": 4
+      },
+      {
+        "advective_travel_time_s": 20000.0,
+        "damkohler_number": 0.0282842712475,
+        "medoid_total_distance": null,
+        "peclet_number": 2.5,
+        "regime": "decay_only",
+        "scenario_id": "A5-CH-0056",
+        "selection_criterion": "minimum_peclet_number",
+        "selection_order_within_regime": 1
+      },
+      {
+        "advective_travel_time_s": 2857.14285714,
+        "damkohler_number": 0.00404061017821,
+        "medoid_total_distance": null,
+        "peclet_number": 350.0,
+        "regime": "decay_only",
+        "scenario_id": "A5-CH-0057",
+        "selection_criterion": "maximum_peclet_number",
+        "selection_order_within_regime": 2
+      },
+      {
+        "advective_travel_time_s": 6718.16078826,
+        "damkohler_number": 0.132299668659,
+        "medoid_total_distance": null,
+        "peclet_number": 74.4213642545,
+        "regime": "decay_only",
+        "scenario_id": "A5-CH-0043",
+        "selection_criterion": "maximum_damkohler_number",
+        "selection_order_within_regime": 3
+      },
+      {
+        "advective_travel_time_s": 4038.17660395,
+        "damkohler_number": 0.00441450148605,
+        "medoid_total_distance": 22.779225841379073,
+        "peclet_number": 50.3266794772,
+        "regime": "decay_only",
+        "scenario_id": "A5-CH-0053",
+        "selection_criterion": "normalized_parameter_space_medoid",
+        "selection_order_within_regime": 4
+      },
+      {
+        "advective_travel_time_s": 41000.0,
+        "damkohler_number": 0.0579827560573,
+        "medoid_total_distance": null,
+        "peclet_number": 2.5,
+        "regime": "retardation_and_decay",
+        "scenario_id": "A5-CH-0116",
+        "selection_criterion": "minimum_peclet_number",
+        "selection_order_within_regime": 1
+      },
+      {
+        "advective_travel_time_s": 5857.14285714,
+        "damkohler_number": 0.00828325086533,
+        "medoid_total_distance": null,
+        "peclet_number": 350.0,
+        "regime": "retardation_and_decay",
+        "scenario_id": "A5-CH-0117",
+        "selection_criterion": "maximum_peclet_number",
+        "selection_order_within_regime": 2
+      },
+      {
+        "advective_travel_time_s": 15000.0,
+        "damkohler_number": 0.3,
+        "medoid_total_distance": null,
+        "peclet_number": 44.72135955,
+        "regime": "retardation_and_decay",
+        "scenario_id": "A5-CH-0119",
+        "selection_criterion": "maximum_damkohler_number",
+        "selection_order_within_regime": 3
+      },
+      {
+        "advective_travel_time_s": 14354.5626614,
+        "damkohler_number": 0.01751148911,
+        "medoid_total_distance": 24.454745630095086,
+        "peclet_number": 51.7281755607,
+        "regime": "retardation_and_decay",
+        "scenario_id": "A5-CH-0110",
+        "selection_criterion": "normalized_parameter_space_medoid",
+        "selection_order_within_regime": 4
+      },
+      {
+        "advective_travel_time_s": 41000.0,
+        "damkohler_number": 0.0,
+        "medoid_total_distance": null,
+        "peclet_number": 2.5,
+        "regime": "retardation_only",
+        "scenario_id": "A5-CH-0086",
+        "selection_criterion": "minimum_peclet_number",
+        "selection_order_within_regime": 1
+      },
+      {
+        "advective_travel_time_s": 5857.14285714,
+        "damkohler_number": 0.0,
+        "medoid_total_distance": null,
+        "peclet_number": 350.0,
+        "regime": "retardation_only",
+        "scenario_id": "A5-CH-0087",
+        "selection_criterion": "maximum_peclet_number",
+        "selection_order_within_regime": 2
+      },
+      {
+        "advective_travel_time_s": 41000.0,
+        "damkohler_number": 0.0,
+        "medoid_total_distance": null,
+        "peclet_number": 50.0,
+        "regime": "retardation_only",
+        "scenario_id": "A5-CH-0085",
+        "selection_criterion": "maximum_advective_travel_time",
+        "selection_order_within_regime": 3
+      },
+      {
+        "advective_travel_time_s": 7183.48177273,
+        "damkohler_number": 0.0,
+        "medoid_total_distance": 22.30459355293015,
+        "peclet_number": 58.5823834037,
+        "regime": "retardation_only",
+        "scenario_id": "A5-CH-0063",
+        "selection_criterion": "normalized_parameter_space_medoid",
+        "selection_order_within_regime": 4
+      }
+    ],
+    "tie_break": "Lexicographically smallest base scenario identifier.",
+    "uses_only_truth_parameters": true
+  },
+  "software": {
+    "implementation": "CPython",
+    "numpy": "2.0.2",
+    "pandas": "2.2.3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.12.2",
+    "scipy": "1.15.2"
+  },
+  "status": "numerical_reference_complete"
+}

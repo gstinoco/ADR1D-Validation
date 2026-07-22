@@ -1,0 +1,418 @@
+{
+  "protocol_id": "ADR1D-NUMERICAL-VALIDATION",
+  "protocol_version": "1.0.0",
+  "status": "locked_before_challenge_generation_and_model_inference",
+  "locked_date": "2026-07-21",
+  "objective": "Independently validate the frozen ADR1D-ML and ADR1D-NN models for accuracy, physical consistency, robustness, computational cost, and reproducibility.",
+  "scope": {
+    "adr1d_ml": "Infer effective velocity, effective dispersion, decay resolvability, and conditional resolvable decay from noisy sensor histories.",
+    "adr1d_nn": "Predict normalized one-dimensional concentration fields from coordinates and known effective transport parameters.",
+    "model_changes_allowed": false,
+    "retraining_allowed": false,
+    "threshold_tuning_allowed": false,
+    "challenge_results_may_change_models": false,
+    "wqp_role": "Observational context only; not a direct PDE validation dataset because hydraulic parameters and boundary conditions are generally unavailable.",
+    "activity_08_boundary": "The traditional numerical method is used only as a validation reference for selected cases, not as a broad method-comparison study."
+  },
+  "frozen_inputs": {
+    "benchmark": {
+      "id": "ADR1D",
+      "version": "1.0.0",
+      "configuration": {
+        "path": "../02_datasets/metadata/synthetic_adr1d_config.json",
+        "sha256": "e8cd71feca06ea41c3f666ff763fa74316770287a1b9ee4d89c4daabdc91b7f1"
+      },
+      "scenarios": {
+        "path": "../02_datasets/metadata/synthetic_adr1d_scenarios.csv",
+        "sha256": "e3a8383aa127787264bd41194e6617c6a5928c30b1f5aa7ba8c8b9a3fb8a5925"
+      },
+      "analytical_field": {
+        "path": "../02_datasets/data_processed/synthetic_adr1d_field.csv",
+        "sha256": "24ab6f929410c4f8daf5293fc6a0dd9490919aff9f24fc2623b297d4b090439e"
+      },
+      "sensor_observations": {
+        "path": "../02_datasets/data_processed/synthetic_adr1d_sensor_observations.csv",
+        "sha256": "7bd3f09b5d1f2f4828a0f45496513074bfed324de6c1d69438a5a453266b297a"
+      },
+      "validation_report": {
+        "path": "../02_datasets/results/synthetic_adr1d_validation_report.json",
+        "sha256": "08dd2f08d5fd1c166f0555d34e4e646a46a77ee1f807fdffce010f703fe45c7e"
+      },
+      "generation_module": {
+        "path": "../02_datasets/scripts/generate_synthetic_adr1d_benchmark.py",
+        "sha256": "51dfb529f09c8ff29bc4fb59a9bc789460152492379fc017e371b3666825ebe6"
+      }
+    },
+    "adr1d_ml": {
+      "model": {
+        "path": "../03_modelos_ml_parametros/models/adr1d_parameter_models.joblib",
+        "sha256": "6890df1b30f5572611e5fcdc0d80a4f923e3877f93594b642c0d084c3f361cea"
+      },
+      "manifest": {
+        "path": "../03_modelos_ml_parametros/models/model_manifest.json",
+        "sha256": "ace20ab6528e133e768dbf5d7ac0a3a042e73e71c29d7fedf79a672b4f039b39"
+      },
+      "protocol": {
+        "path": "../03_modelos_ml_parametros/results/final_model_protocol.json",
+        "sha256": "56555a235dd6610a5bd3d6376cbe1123490fc50d28b6a0a0c0e8a0c342fdc2d3"
+      },
+      "base_feature_module": {
+        "path": "../03_modelos_ml_parametros/scripts/build_adr1d_modeling_table.py",
+        "sha256": "5b77cb5d136231499f95746d4134748e2be323980d893c9e0f32b0f77c712bca"
+      },
+      "physics_feature_module": {
+        "path": "../03_modelos_ml_parametros/scripts/build_adr1d_physics_features.py",
+        "sha256": "f1a2d1800bffdc37a4b9825b550686956411307179687682d3cb349b616efd19"
+      },
+      "decay_target_module": {
+        "path": "../03_modelos_ml_parametros/scripts/build_decay_detectability_targets.py",
+        "sha256": "0b709442ae9c37e77b4605f836ad25ccfc7c5f5c8d90e5d1dad03972e024f4e8"
+      },
+      "inference_module": {
+        "path": "../03_modelos_ml_parametros/scripts/predict_parameters.py",
+        "sha256": "6331f250d86fa2023d74758672ea46f794fafc298bb6a5ed12df62a497d6eab3"
+      },
+      "canonical_metrics_sha256": "43f282e29c6fe4f12954c86dd53a9283651b249bb8a61f9bd4073da93b5ed732",
+      "canonical_predictions_sha256": "4b23cea1de3c74a34e9769e190a23138fdf0a6def10c53b76273354641c223ff"
+    },
+    "adr1d_nn": {
+      "model": {
+        "path": "../04_redes_neuronales_transporte/models/adr1d_nn.pt",
+        "sha256": "9cc762b5e5f45d368f52a2da76695f4a762f4d70226db65357a1791b59762918"
+      },
+      "manifest": {
+        "path": "../04_redes_neuronales_transporte/models/model_manifest.json",
+        "sha256": "732ce2cd35172ac083aaa27d8dac028b0a8d20c2abfa430194bdb9f306f4cbea"
+      },
+      "protocol": {
+        "path": "../04_redes_neuronales_transporte/configs/final_model_protocol.json",
+        "sha256": "7880b2533f4f23c8f7144680ce56c7fcac5da1a3c5e35ed3e301dbb5b3dd0e33"
+      },
+      "evaluation_lock": {
+        "path": "../04_redes_neuronales_transporte/configs/final_evaluation_lock.json",
+        "sha256": "7499963af015d198639fa0e8f833ac61a61dca934d59226e23accf42367aa452"
+      },
+      "inference_module": {
+        "path": "../04_redes_neuronales_transporte/src/predict_concentration.py",
+        "sha256": "5d313a8429fea5ab1791f29b775288dc5054820615c5e1337c16dd3f8c58b241"
+      },
+      "canonical_result_manifest_sha256": "9c01769bc44ce66fd8feefad207f1bdfd4807890f2941a9ae70da72cf6de4f48"
+    }
+  },
+  "evidence_tiers": {
+    "tier_1_canonical_reproduction": {
+      "purpose": "Audit the original 45-scenario test evaluations and verify their stored metrics and outputs.",
+      "new_evidence": false,
+      "scenario_count": 45,
+      "required_result": "Recorded outputs and metrics reproduce within the stored numerical or digest contracts."
+    },
+    "tier_2_locked_challenge": {
+      "purpose": "Evaluate both frozen models on previously unseen in-domain scenarios generated after this protocol is locked.",
+      "new_evidence": true,
+      "base_scenario_count": 120,
+      "required_result": "All predictions, scenario metrics, uncertainty intervals, and failure cases are retained."
+    },
+    "tier_3_traditional_numerical_reference": {
+      "purpose": "Cross-check analytical and neural fields with an independently implemented conservative numerical method.",
+      "new_evidence": true,
+      "selected_scenario_count": 16,
+      "selection_uses_model_errors": false
+    }
+  },
+  "challenge_design": {
+    "design_version": "1.0.0",
+    "parameter_seed": 2026072105,
+    "sensor_noise_seed": 2026072106,
+    "bootstrap_seed": 2026072107,
+    "base_scenarios": 120,
+    "regimes": [
+      "conservative",
+      "decay_only",
+      "retardation_only",
+      "retardation_and_decay"
+    ],
+    "base_scenarios_per_regime": 30,
+    "interior_latin_hypercube_per_regime": 24,
+    "boundary_profiles_per_regime": 6,
+    "latin_hypercube_policy": "Independent open-interval stratified Latin hypercube using the Python standard-library random generator.",
+    "parameter_order": [
+      "velocity_m_s_linear",
+      "dispersion_m2_s_log10",
+      "source_concentration_mg_L_log10",
+      "source_start_s_linear",
+      "source_duration_s_linear",
+      "retardation_factor_linear_when_active",
+      "decay_rate_s_1_log10_when_active"
+    ],
+    "parameter_ranges": {
+      "velocity_m_s": [0.05, 0.35],
+      "dispersion_m2_s": [1.0, 20.0],
+      "source_concentration_mg_L": [0.2, 5.0],
+      "source_start_s": [0.0, 3600.0],
+      "source_duration_s": [1800.0, 10800.0],
+      "retardation_factor_when_active": [1.1, 3.0],
+      "decay_rate_s_1_when_active": [1e-7, 2e-5]
+    },
+    "inactive_parameter_values": {
+      "retardation_factor": 1.0,
+      "decay_rate_s_1": 0.0
+    },
+    "boundary_profile_unit_coordinates": [
+      [0.0, 0.0, 0.5, 0.5, 0.5, 0.5, 0.5],
+      [0.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.5],
+      [1.0, 0.0, 0.5, 0.5, 0.5, 0.5, 0.5],
+      [1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.5],
+      [0.5, 0.5, 0.0, 1.0, 0.0, 1.0, 1.0],
+      [0.5, 0.5, 1.0, 0.0, 1.0, 0.0, 0.0]
+    ],
+    "identifier_pattern": "A5-CH-####",
+    "split_label": "challenge",
+    "canonical_collision_policy": "Reject exact parameter duplicates at an absolute normalized-coordinate tolerance of 1e-12 and report the minimum normalized distance to ADR1D 1.0.0.",
+    "domain": {
+      "length_m": 1000.0,
+      "spatial_nodes": 51,
+      "spatial_step_m": 20.0,
+      "final_time_s": 86400.0,
+      "time_nodes": 49,
+      "time_step_s": 1800.0
+    },
+    "sensor_model": {
+      "positions_m": [100.0, 250.0, 400.0, 600.0, 800.0, 1000.0],
+      "noise_replicates_per_base_scenario": 5,
+      "replicate_identifier_pattern": "A5-CH-####-R##",
+      "relative_gaussian_noise": 0.03,
+      "absolute_noise_floor_mg_L": 0.002,
+      "detection_limit_mg_L": 0.01,
+      "below_limit_substitution_mg_L": 0.005,
+      "subseed_policy": "SHA-256 of sensor_noise_seed, base scenario identifier, and replicate identifier initializes an independent standard-library random stream."
+    },
+    "decay_resolvability": {
+      "damkohler_threshold": 0.030459207484708546,
+      "threshold_equation": "-ln(1-relative_gaussian_noise)",
+      "classification_unit": "base scenario",
+      "conditional_decay_target": "log10 decay rate for truth-labeled resolvable scenarios"
+    },
+    "challenge_lock_required_before_inference": true,
+    "challenge_model_queries_before_lock": 0
+  },
+  "traditional_numerical_reference": {
+    "method": "Cell-centered finite volume with Scharfetter-Gummel exponential fitting for advection-dispersion fluxes and fully implicit backward Euler time integration.",
+    "equation_after_retardation_scaling": "dC/dt = D_eff*d2C/dx2 - v_eff*dC/dx - lambda*C",
+    "inlet_boundary": "Exact finite-pulse Dirichlet concentration.",
+    "outlet_boundary": "Advective outflow with zero diffusive flux.",
+    "computational_domain_length_m": 1200.0,
+    "reported_comparison_interval_m": [0.0, 900.0],
+    "source_switch_times_inserted_exactly": true,
+    "grid_levels": [
+      {"name": "coarse", "spatial_step_m": 10.0, "maximum_time_step_s": 225.0},
+      {"name": "medium", "spatial_step_m": 5.0, "maximum_time_step_s": 112.5},
+      {"name": "fine", "spatial_step_m": 2.5, "maximum_time_step_s": 56.25}
+    ],
+    "selected_scenarios": 16,
+    "selection_per_regime": 4,
+    "selection_rule_order": [
+      "minimum_peclet_number",
+      "maximum_peclet_number",
+      "maximum_damkohler_number_or_advective_travel_time_when_decay_is_zero",
+      "normalized_parameter_space_medoid"
+    ],
+    "selection_tie_break": "Lexicographically smallest base scenario identifier.",
+    "selection_uses_only_truth_parameters": true,
+    "acceptance": {
+      "fine_vs_analytical_rmse_max": 0.03,
+      "medium_vs_fine_rmse_max": 0.01,
+      "minimum_allowed_normalized_concentration": -1e-10
+    },
+    "diagnostics_without_acceptance_gate": [
+      "discrete_mass_balance",
+      "maximum_absolute_error",
+      "arrival_time_error",
+      "runtime",
+      "memory"
+    ]
+  },
+  "metrics": {
+    "independent_unit": "base_scenario_id",
+    "active_normalized_concentration_threshold": 0.0001,
+    "adr1d_ml": {
+      "effective_velocity": [
+        "mae_log10",
+        "rmse_log10",
+        "r2_log10",
+        "median_absolute_percentage_error",
+        "percentile_90_absolute_percentage_error"
+      ],
+      "effective_dispersion": [
+        "mae_log10",
+        "rmse_log10",
+        "r2_log10",
+        "median_absolute_percentage_error",
+        "percentile_90_absolute_percentage_error"
+      ],
+      "decay_resolvability": [
+        "balanced_accuracy",
+        "precision",
+        "recall",
+        "f1",
+        "roc_auc",
+        "log_loss",
+        "confusion_matrix"
+      ],
+      "conditional_decay": [
+        "mae_log10",
+        "rmse_log10",
+        "r2_log10",
+        "median_absolute_percentage_error"
+      ],
+      "noise_repeatability": [
+        "within_scenario_standard_deviation",
+        "within_scenario_coefficient_of_variation",
+        "classification_agreement_fraction"
+      ],
+      "physical_checks": [
+        "positive_velocity_fraction",
+        "positive_dispersion_fraction",
+        "probability_in_unit_interval_fraction",
+        "positive_conditional_decay_fraction"
+      ]
+    },
+    "adr1d_nn": {
+      "field": [
+        "mae",
+        "rmse",
+        "r2",
+        "active_mae",
+        "active_rmse",
+        "maximum_absolute_error"
+      ],
+      "scenario_distribution": [
+        "median_scenario_rmse",
+        "percentile_90_scenario_rmse",
+        "maximum_scenario_rmse"
+      ],
+      "physical": [
+        "initial_condition_maximum_absolute_error",
+        "inlet_boundary_maximum_absolute_error",
+        "negative_prediction_fraction",
+        "above_one_prediction_fraction",
+        "integrated_mass_relative_error",
+        "arrival_time_absolute_error_s",
+        "pde_residual_diagnostic"
+      ],
+      "subgroups": [
+        "regime",
+        "design_component",
+        "peclet_quartile",
+        "damkohler_state",
+        "active_and_inactive_field_regions"
+      ]
+    }
+  },
+  "minimum_adequacy_criteria": {
+    "interpretation": "Pre-specified minimum evidence thresholds for the locked challenge set; failure is reported and does not trigger model changes.",
+    "adr1d_ml": {
+      "effective_velocity_median_absolute_percentage_error_max": 0.1,
+      "effective_velocity_percentile_90_absolute_percentage_error_max": 0.25,
+      "effective_velocity_r2_log10_min": 0.9,
+      "effective_dispersion_median_absolute_percentage_error_max": 0.4,
+      "effective_dispersion_percentile_90_absolute_percentage_error_max": 1.0,
+      "effective_dispersion_r2_log10_min": 0.5,
+      "decay_balanced_accuracy_min": 0.65,
+      "decay_roc_auc_min": 0.7,
+      "conditional_decay_minimum_resolvable_base_scenarios_for_gate": 10,
+      "conditional_decay_median_absolute_percentage_error_max": 0.85,
+      "conditional_decay_r2_log10_min": 0.1,
+      "physical_validity_fraction_required": 1.0
+    },
+    "adr1d_nn": {
+      "pooled_rmse_max": 0.035,
+      "active_rmse_max": 0.065,
+      "r2_min": 0.97,
+      "percentile_90_scenario_rmse_max": 0.05,
+      "initial_condition_maximum_absolute_error_max": 1e-12,
+      "inlet_boundary_maximum_absolute_error_max": 1e-12,
+      "negative_prediction_fraction_max": 0.0,
+      "above_one_prediction_fraction_max": 0.0,
+      "median_integrated_mass_relative_error_max": 0.1,
+      "percentile_90_integrated_mass_relative_error_max": 0.25,
+      "median_arrival_time_absolute_error_s_max": 1800.0,
+      "percentile_90_arrival_time_absolute_error_s_max": 3600.0
+    }
+  },
+  "statistical_analysis": {
+    "confidence_level": 0.95,
+    "bootstrap_method": "Percentile cluster bootstrap over base scenario identifiers.",
+    "bootstrap_resamples": 5000,
+    "bootstrap_seed": 2026072107,
+    "sensor_replicates_nested_within_base_scenario": true,
+    "row_level_pseudoreplication_allowed": false,
+    "subgroup_policy": "Report every pre-specified regime and design component; mark estimates with fewer than 10 base scenarios as descriptive.",
+    "missing_metric_policy": "Return an explicit not-estimable status and denominator rather than silently dropping a metric."
+  },
+  "computational_cost": {
+    "device": "CPU",
+    "thread_policy": "One computational thread for timed model and reference-solver comparisons.",
+    "warmup_runs": 2,
+    "timed_repetitions": 7,
+    "summary": ["median", "interquartile_range", "minimum", "maximum"],
+    "separate_components": [
+      "artifact_verification_and_loading",
+      "feature_construction",
+      "model_inference",
+      "analytical_evaluation",
+      "traditional_numerical_solution",
+      "end_to_end"
+    ],
+    "environment_fields": [
+      "operating_system",
+      "processor",
+      "logical_cpu_count",
+      "physical_memory",
+      "python_version",
+      "library_versions"
+    ],
+    "timing_claim_scope": "Machine-specific descriptive timing; no universal speed-up claim."
+  },
+  "reporting_policy": {
+    "retain_all_base_scenarios": true,
+    "retain_all_sensor_replicates": true,
+    "retain_all_failure_cases": true,
+    "report_canonical_results_as_prior_evidence": true,
+    "report_challenge_results_as_new_evidence": true,
+    "field_validation_claim_allowed": false,
+    "extrapolation_claim_allowed": false,
+    "decision_support_claim_allowed": false,
+    "overall_outcome_labels": [
+      "meets_all_pre_specified_criteria",
+      "mixed_evidence",
+      "does_not_meet_pre_specified_criteria"
+    ]
+  },
+  "planned_artifacts": {
+    "challenge_scenarios": "data/challenge_scenarios.csv",
+    "challenge_analytical_field": "data/challenge_analytical_field.csv",
+    "challenge_sensor_observations": "data/challenge_sensor_observations.csv",
+    "challenge_manifest": "results/challenge_manifest.json",
+    "challenge_lock": "results/challenge_lock.json",
+    "canonical_reproduction": "results/canonical_reproduction.json",
+    "adr1d_ml_predictions": "results/adr1d_ml_challenge_predictions.csv",
+    "adr1d_ml_metrics": "results/adr1d_ml_challenge_metrics.json",
+    "adr1d_nn_predictions": "results/adr1d_nn_challenge_predictions.csv",
+    "adr1d_nn_scenario_metrics": "results/adr1d_nn_challenge_scenarios.csv",
+    "adr1d_nn_metrics": "results/adr1d_nn_challenge_metrics.json",
+    "numerical_reference_metrics": "results/numerical_reference_metrics.json",
+    "computational_cost": "results/computational_cost.json",
+    "figures": "results/figures/",
+    "validation_report_source": "results/numerical_validation_report.tex",
+    "validation_report_pdf": "results/numerical_validation_report.pdf",
+    "final_manifest": "results/final_validation_manifest.json"
+  },
+  "change_control": {
+    "silent_edits_allowed": false,
+    "amendment_requires_new_protocol_version": true,
+    "amendment_requires_reason_and_previous_hash": true,
+    "amendment_after_challenge_inference_may_relax_acceptance_criteria": false,
+    "challenge_inference_count_at_lock": 0,
+    "traditional_solver_runs_at_lock": 0
+  }
+}

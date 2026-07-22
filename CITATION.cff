@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "Please cite the preferred technical report if you use this validation package or its results."
+title: "ADR1D-Validation: Reproducible Numerical Validation of ADR1D-ML and ADR1D-NN"
+type: software
+version: 1.0.0
+repository-code: "https://github.com/gstinoco/ADR1D-Validation"
+url: "https://github.com/gstinoco/ADR1D-Validation"
+license: MIT
+abstract: >-
+  Reproducible evidence package for the independent numerical validation of
+  ADR1D-ML and ADR1D-NN against a locked analytical challenge set and a
+  traditional finite-volume reference.
+authors:
+  - family-names: Tinoco-Guerrero
+    given-names: Gerardo
+    email: gerardo.tinoco@umich.mx
+    orcid: "https://orcid.org/0000-0003-3119-770X"
+    affiliation: "Universidad Michoacana de San Nicolás de Hidalgo"
+  - family-names: Domínguez-Mota
+    given-names: Francisco J.
+    orcid: "https://orcid.org/0000-0001-6837-172X"
+    affiliation: "Universidad Michoacana de San Nicolás de Hidalgo"
+  - family-names: Guzmán-Torres
+    given-names: J. Alberto
+    orcid: "https://orcid.org/0000-0002-9309-9390"
+    affiliation: "Universidad Michoacana de San Nicolás de Hidalgo"
+keywords:
+  - contaminant transport
+  - numerical validation
+  - machine learning
+  - neural surrogate
+  - finite volume method
+  - advection-dispersion-reaction
+  - reproducible research
+preferred-citation:
+  type: report
+  title: "Validación numérica independiente de ADR1D-ML y ADR1D-NN: Informe técnico reproducible"
+  version: "1.1"
+  year: 2026
+  month: 7
+  institution:
+    name: "Universidad Michoacana de San Nicolás de Hidalgo"
+  authors:
+    - family-names: Tinoco-Guerrero
+      given-names: Gerardo
+      email: gerardo.tinoco@umich.mx
+      orcid: "https://orcid.org/0000-0003-3119-770X"
+      affiliation: "Universidad Michoacana de San Nicolás de Hidalgo"
+    - family-names: Domínguez-Mota
+      given-names: Francisco J.
+      orcid: "https://orcid.org/0000-0001-6837-172X"
+      affiliation: "Universidad Michoacana de San Nicolás de Hidalgo"
+    - family-names: Guzmán-Torres
+      given-names: J. Alberto
+      orcid: "https://orcid.org/0000-0002-9309-9390"
+      affiliation: "Universidad Michoacana de San Nicolás de Hidalgo"
+

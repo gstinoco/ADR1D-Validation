@@ -1,0 +1,37 @@
+{
+  "lock_version": "1.0.0",
+  "status": "locked_before_challenge_generation_and_model_inference",
+  "locked_at_utc": "2026-07-21T19:50:26Z",
+  "protocol": {
+    "path": "configs/validation_protocol.json",
+    "sha256": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9",
+    "bytes": 17816,
+    "protocol_id": "ADR1D-NUMERICAL-VALIDATION",
+    "protocol_version": "1.0.0"
+  },
+  "integrity_verification": {
+    "algorithm": "SHA-256",
+    "frozen_inputs_verified": 18,
+    "frozen_input_mismatches": 0,
+    "protocol_internal_contract_valid": true
+  },
+  "state_at_lock": {
+    "challenge_scenarios_generated": 0,
+    "challenge_sensor_realizations_generated": 0,
+    "adr1d_ml_challenge_inference_runs": 0,
+    "adr1d_nn_challenge_inference_runs": 0,
+    "traditional_numerical_solver_runs": 0,
+    "acceptance_criteria_inspected_against_challenge_results": false
+  },
+  "frozen_models": {
+    "adr1d_ml_sha256": "6890df1b30f5572611e5fcdc0d80a4f923e3877f93594b642c0d084c3f361cea",
+    "adr1d_nn_sha256": "9cc762b5e5f45d368f52a2da76695f4a762f4d70226db65357a1791b59762918"
+  },
+  "change_policy": {
+    "silent_edits_allowed": false,
+    "new_version_required_for_amendment": true,
+    "previous_protocol_hash_required": true,
+    "reason_required": true,
+    "post_inference_relaxation_of_acceptance_criteria_allowed": false
+  }
+}

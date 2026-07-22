@@ -1,0 +1,80 @@
+{
+  "challenge_guard": {
+    "canonical_reproduction_sha256": "1863b4ab8f8dba6a052184f580bd1bcac3ba6601e0dd274015bbbaca4146853d",
+    "challenge_lock_sha256": "4c03dfebb4afdb8edbe884a16126241d127cd1b3fbce3bf60d0f10c3842ec27a",
+    "protected_challenge_components_verified": 7
+  },
+  "deterministic_rebuilds_verified": 2,
+  "execution_contract": {
+    "adr1d_ml_decision_threshold": 0.19,
+    "base_scenario_is_independent_unit": true,
+    "bootstrap_resamples": 5000,
+    "bootstrap_seed": 2026072107,
+    "model_changes_allowed": false,
+    "permitted_persisted_inference_runs_per_model": 1,
+    "sensor_replicates_nested_within_base_scenario": true,
+    "threshold_tuning_allowed": false
+  },
+  "failure_policy": {
+    "automatic_rerun_after_failure_allowed": false,
+    "retain_staging_outputs_after_started_inference": true,
+    "write_incident_record_after_started_inference": true
+  },
+  "frozen_models": {
+    "adr1d_ml": {
+      "inference_module_sha256": "6331f250d86fa2023d74758672ea46f794fafc298bb6a5ed12df62a497d6eab3",
+      "model_sha256": "6890df1b30f5572611e5fcdc0d80a4f923e3877f93594b642c0d084c3f361cea"
+    },
+    "adr1d_nn": {
+      "inference_module_sha256": "5d313a8429fea5ab1791f29b775288dc5054820615c5e1337c16dd3f8c58b241",
+      "model_sha256": "9cc762b5e5f45d368f52a2da76695f4a762f4d70226db65357a1791b59762918"
+    }
+  },
+  "lock_version": "1.0.0",
+  "locked_at_utc": "2026-07-21T22:32:10Z",
+  "locked_code": {
+    "evaluation": {
+      "path": "src/evaluate_locked_challenge.py",
+      "sha256": "ff2645916bea729e967e784c8fb304443a3cc1a4e4c9645577c3cbab253caaa0"
+    },
+    "preparation": {
+      "path": "src/prepare_challenge_evaluation.py",
+      "sha256": "6632a34060be21d1c6d3b47b8f60ac3359fe60cc3ad1b6a93f5a692cda15d26d"
+    }
+  },
+  "planned_outputs": {
+    "adr1d_ml_metrics": "results/adr1d_ml_challenge_metrics.json",
+    "adr1d_ml_predictions": "results/adr1d_ml_challenge_predictions.csv",
+    "adr1d_nn_metrics": "results/adr1d_nn_challenge_metrics.json",
+    "adr1d_nn_predictions": "results/adr1d_nn_challenge_predictions.csv",
+    "adr1d_nn_scenario_metrics": "results/adr1d_nn_challenge_scenarios.csv"
+  },
+  "prepared_inputs": {
+    "adr1d_ml": {
+      "bytes": 726456,
+      "columns": 87,
+      "rows": 600,
+      "sha256": "d55ed2c1c7e7dc5370152ac5ca22a25630c776d947010521bfeb463e0cfaccc1"
+    },
+    "adr1d_nn": {
+      "bytes": 27856988,
+      "columns": 10,
+      "rows": 299880,
+      "sha256": "afdea2b0219c816f19249971f9406e10e2ab1831f94d2a7bdfe5fdd5b17de1d7"
+    }
+  },
+  "protocol": {
+    "path": "configs/validation_protocol.json",
+    "protocol_id": "ADR1D-NUMERICAL-VALIDATION",
+    "protocol_version": "1.0.0",
+    "sha256": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9"
+  },
+  "state_at_lock": {
+    "acceptance_criteria_inspected_against_challenge_results": false,
+    "adr1d_ml_challenge_inference_runs": 0,
+    "adr1d_ml_model_loaded": false,
+    "adr1d_nn_challenge_inference_runs": 0,
+    "adr1d_nn_model_loaded": false
+  },
+  "status": "locked_before_challenge_inference"
+}

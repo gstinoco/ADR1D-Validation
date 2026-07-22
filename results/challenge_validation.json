@@ -1,0 +1,144 @@
+{
+  "analytical_field_validation": {
+    "analytical_values_reconstructed": 299880,
+    "columns": 8,
+    "generator_module_imported": false,
+    "initial_interior_maximum_abs_mg_L": 0.0,
+    "initial_time_maximum_abs_including_inlet_mg_L": 5.0,
+    "inlet_boundary_maximum_abs_error_mg_L": 4.997335878442755e-12,
+    "maximum_absolute_concentration_error_mg_L": 4.999556324492005e-12,
+    "maximum_absolute_normalized_error": 5.000444502911705e-13,
+    "maximum_serialized_concentration_mg_L": 5.0,
+    "minimum_serialized_concentration_mg_L": 0.0,
+    "rows": 299880
+  },
+  "independence": {
+    "adr1d_generation_module_imported": false,
+    "analytical_values_reconstructed": 476280,
+    "challenge_generator_imported": false,
+    "noise_streams_reconstructed": 600,
+    "serialized_models_loaded": false
+  },
+  "integrity": {
+    "frozen_file_mismatches": 0,
+    "frozen_files_verified": 18,
+    "serialized_models_loaded": 0
+  },
+  "manifest_validation": {
+    "bytes": 2880,
+    "file_hashes_verified": 3,
+    "model_access_verified_zero": true,
+    "path": "results/challenge_manifest.json",
+    "sha256": "0e274354843990728cfffacb92826940f38c432ef4e36086da6a28fcc987e1af"
+  },
+  "model_access": {
+    "adr1d_ml_challenge_inference_runs": 0,
+    "adr1d_ml_loaded": false,
+    "adr1d_nn_challenge_inference_runs": 0,
+    "adr1d_nn_loaded": false
+  },
+  "protocol": {
+    "protocol_id": "ADR1D-NUMERICAL-VALIDATION",
+    "protocol_version": "1.0.0",
+    "sha256": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9"
+  },
+  "report_version": "1.0.0",
+  "scenario_validation": {
+    "boundary_profiles_verified": 24,
+    "canonical_separation": {
+      "canonical_scenarios": 300,
+      "closest_pair": [
+        "A5-CH-0019",
+        "ADR1D-0060"
+      ],
+      "collision_tolerance_linf": 1e-12,
+      "collisions": 0,
+      "compared_same_regime_pairs": 9000,
+      "distance_metric": "Euclidean distance over active normalized parameters",
+      "identifier_overlaps": 0,
+      "minimum_normalized_distance": 0.11702414496344041
+    },
+    "columns": 23,
+    "design_component_counts": {
+      "boundary_profile": 24,
+      "latin_hypercube": 96
+    },
+    "latin_hypercube_active_dimensions": {
+      "conservative": [
+        "velocity_m_s_linear",
+        "dispersion_m2_s_log10",
+        "source_concentration_mg_L_log10",
+        "source_start_s_linear",
+        "source_duration_s_linear"
+      ],
+      "decay_only": [
+        "velocity_m_s_linear",
+        "dispersion_m2_s_log10",
+        "source_concentration_mg_L_log10",
+        "source_start_s_linear",
+        "source_duration_s_linear",
+        "decay_rate_s_1_log10_when_active"
+      ],
+      "retardation_and_decay": [
+        "velocity_m_s_linear",
+        "dispersion_m2_s_log10",
+        "source_concentration_mg_L_log10",
+        "source_start_s_linear",
+        "source_duration_s_linear",
+        "retardation_factor_linear_when_active",
+        "decay_rate_s_1_log10_when_active"
+      ],
+      "retardation_only": [
+        "velocity_m_s_linear",
+        "dispersion_m2_s_log10",
+        "source_concentration_mg_L_log10",
+        "source_start_s_linear",
+        "source_duration_s_linear",
+        "retardation_factor_linear_when_active"
+      ]
+    },
+    "regime_counts": {
+      "conservative": 30,
+      "decay_only": 30,
+      "retardation_and_decay": 30,
+      "retardation_only": 30
+    },
+    "rows": 120,
+    "serialization_mismatches": 0,
+    "unique_identifiers": 120
+  },
+  "sensor_validation": {
+    "base_scenarios": 120,
+    "below_detection_fraction": 0.8207596371882087,
+    "below_detection_rows": 144782,
+    "censoring_mismatches": 0,
+    "columns": 14,
+    "generated_standard_noise_mean": -0.0028116348027601343,
+    "generated_standard_noise_std": 0.9990660860732002,
+    "maximum_absolute_observed_error_mg_L": 4.999556324492005e-12,
+    "maximum_absolute_truth_error_mg_L": 4.999112235282155e-12,
+    "noise_streams_reconstructed": 600,
+    "replicates_per_base_scenario": 5,
+    "rows": 176400,
+    "scenario_replicates": 600,
+    "sensor_positions": [
+      100.0,
+      250.0,
+      400.0,
+      600.0,
+      800.0,
+      1000.0
+    ],
+    "times_per_sensor": 49
+  },
+  "software": {
+    "implementation": "CPython",
+    "python": "3.12.2"
+  },
+  "status": "passed_before_model_inference",
+  "validated_date": "2026-07-21",
+  "validator": {
+    "path": "src/validate_challenge_set.py",
+    "sha256": "54e40fafecc54fa87b3f61e45ec85a9cfa8de0523d7c8d21f223d95cd4614e4a"
+  }
+}

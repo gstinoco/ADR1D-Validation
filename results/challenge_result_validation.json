@@ -1,0 +1,86 @@
+{
+  "artifacts": {
+    "adr1d_ml_metrics": {
+      "bytes": 10891,
+      "path": "results/adr1d_ml_challenge_metrics.json",
+      "sha256": "ced95d0f72f1cf9c2c650a182c9ed2b265eee0f2d29e54ff922980cc6e9ed6e4"
+    },
+    "adr1d_ml_predictions": {
+      "bytes": 110898,
+      "columns": 17,
+      "path": "results/adr1d_ml_challenge_predictions.csv",
+      "rows": 600,
+      "sha256": "d60ffbf1ce634d37912842694ca6ad1ab9da312f0b5912b06815bedb405e7c84"
+    },
+    "adr1d_nn_metrics": {
+      "bytes": 11753,
+      "path": "results/adr1d_nn_challenge_metrics.json",
+      "sha256": "2e6351b04281be0e27487bddcd6b59a0e50464f1e79888e4f08475da79bc41d8"
+    },
+    "adr1d_nn_predictions": {
+      "bytes": 38757851,
+      "columns": 12,
+      "path": "results/adr1d_nn_challenge_predictions.csv",
+      "rows": 299880,
+      "sha256": "84e432987b0ca0c2a62de54a73bc94f5d5840eba9237bca9e89f53668871a618"
+    },
+    "adr1d_nn_scenario_metrics": {
+      "bytes": 26149,
+      "columns": 20,
+      "path": "results/adr1d_nn_challenge_scenarios.csv",
+      "rows": 120,
+      "sha256": "36376826de674b9df0cb681c7fa9a10f2067d0e9db2a9f4f7ba820c142e8a78f"
+    }
+  },
+  "checks": {
+    "maximum_absolute_difference": 8.92008689135082e-13,
+    "numerical_values_compared": 2423,
+    "successful_checks": 2664
+  },
+  "execution": {
+    "adr1d_ml_inference_runs": 0,
+    "adr1d_ml_model_loads": 0,
+    "adr1d_nn_inference_runs": 0,
+    "adr1d_nn_model_loads": 0,
+    "post_challenge_tuning_performed": false
+  },
+  "hash_chain": {
+    "canonical_reproduction_sha256": "1863b4ab8f8dba6a052184f580bd1bcac3ba6601e0dd274015bbbaca4146853d",
+    "challenge_lock_sha256": "4c03dfebb4afdb8edbe884a16126241d127cd1b3fbce3bf60d0f10c3842ec27a",
+    "evaluation_lock_sha256": "1c1b398396e88d0ab1cf731f838820d8896d1d93c9448020007c0281c4a6dcd3",
+    "frozen_artifacts_verified": 18,
+    "protocol_sha256": "340ed49f3b3054a4b343b99e2863a6a157634bd716274949c6631563495231d9"
+  },
+  "limitations": {
+    "note": "Raw public-API staging files were intentionally not retained; the enriched immutable prediction tables and their hashes are the auditable inference evidence.",
+    "raw_api_outputs_retained": false
+  },
+  "recalculation": {
+    "adr1d_ml": {
+      "adequacy_outcome": "meets_all_pre_specified_criteria",
+      "base_scenarios": 120,
+      "bootstrap_resamples": 5000,
+      "replicate_predictions": 600,
+      "reported_evidence_tree_reproduced": true
+    },
+    "adr1d_nn": {
+      "adequacy_outcome": "meets_all_pre_specified_criteria",
+      "base_scenarios": 120,
+      "bootstrap_resamples": 5000,
+      "point_predictions": 299880,
+      "reported_evidence_tree_reproduced": true,
+      "scenario_table_rows_reproduced": 120
+    }
+  },
+  "scope": "Independent read-only recalculation from persisted challenge predictions; no model deserialization or inference.",
+  "status": "passed",
+  "tolerances": {
+    "absolute": 2e-09,
+    "relative": 2e-08
+  },
+  "validation_version": "1.0.0",
+  "validator": {
+    "path": "src/validate_challenge_results.py",
+    "sha256": "030c6b717418068b05f2cd490dd8c28f43b03709e69e4ab3f9096a1cd5c78769"
+  }
+}
