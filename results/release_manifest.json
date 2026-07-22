@@ -154,6 +154,16 @@
         "bytes": 656692,
         "path": "results/adr1d_validacion_numerica.pdf",
         "sha256": "155ec4ceed7dcecea4f3e2b6f6c33893ae30cc202417bd4fa9959782cb91d9e5"
+      },
+      {
+        "bytes": 80086,
+        "path": "results/adr1d_numerical_validation_en.tex",
+        "sha256": "253d93330fca1beda43f09fe0cd07c2a93138ec0cd61dc5d5d8884bd60e146b3"
+      },
+      {
+        "bytes": 655278,
+        "path": "results/adr1d_numerical_validation_en.pdf",
+        "sha256": "6dbf56ba2516dc5b9adce013b824d6640dfa7ba97546d214cf26d4bca5c77899"
       }
     ],
     "source_code": [

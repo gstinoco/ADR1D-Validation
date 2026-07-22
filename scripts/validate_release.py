@@ -59,8 +59,10 @@ from pathlib import Path
 ROOT             = Path(__file__).resolve().parents[1]
 RESULTS          = ROOT / "results"
 RELEASE_MANIFEST = RESULTS / "release_manifest.json"
-REPORT_TEX       = RESULTS / "adr1d_validacion_numerica.tex"
-REPORT_PDF       = RESULTS / "adr1d_validacion_numerica.pdf"
+REPORT_TEX_ES    = RESULTS / "adr1d_validacion_numerica.tex"
+REPORT_PDF_ES    = RESULTS / "adr1d_validacion_numerica.pdf"
+REPORT_TEX_EN    = RESULTS / "adr1d_numerical_validation_en.tex"
+REPORT_PDF_EN    = RESULTS / "adr1d_numerical_validation_en.pdf"
 REPOSITORY_URL   = "https://github.com/gstinoco/ADR1D-Validation"
 TEXT_SUFFIXES    = {".cff", ".json", ".md", ".py", ".tex", ".txt"}
 
@@ -224,7 +226,7 @@ def build_manifest():
         "artifact_groups": {
             "core_evidence": [artifact_record(path) for path in CORE_EVIDENCE],
             "figures": [artifact_record(path) for path in figure_paths],
-            "report": [artifact_record(REPORT_TEX), artifact_record(REPORT_PDF)],
+            "report": [artifact_record(REPORT_TEX_ES), artifact_record(REPORT_PDF_ES), artifact_record(REPORT_TEX_EN), artifact_record(REPORT_PDF_EN)],
             "source_code": [artifact_record(path) for path in source_paths],
         },
         "release": {
@@ -262,7 +264,7 @@ def validate_manifest():
     manifest = load_json(RELEASE_MANIFEST)
     require(manifest.get("status") == "complete", "Release manifest is incomplete")
     require(manifest.get("release", {}).get("repository") == REPOSITORY_URL, "Release repository URL changed")
-    expected_counts = {"core_evidence": 20, "figures": 8, "report": 2, "source_code": 10}
+    expected_counts = {"core_evidence": 20, "figures": 8, "report": 4, "source_code": 10}
     counts = {}
     for group, expected_count in expected_counts.items():
         records = manifest.get("artifact_groups", {}).get(group, [])
@@ -364,6 +366,38 @@ def validate_scientific_summary():
     }
 
 
+def validate_english_report():
+    """
+    Verify the English report edition and its equivalence in structure.
+
+    Returns
+    -------
+    dict
+        Page count and structural elements shared by both language editions.
+    """
+    require(shutil.which("pdfinfo") is not None, "Poppler pdfinfo is required; install Poppler and retry")
+    process = subprocess.run(["pdfinfo", str(REPORT_PDF_EN)], cwd=ROOT, capture_output=True, text=True, check=False)
+    require(process.returncode == 0, "The English report PDF could not be inspected")
+    require("Title:           Independent Numerical Validation of ADR1D-ML and ADR1D-NN" in process.stdout, "The English report title metadata changed")
+    require(re.search(r"^Pages:\s+27$", process.stdout, flags=re.MULTILINE), "The English report must contain 27 pages")
+    require(re.search(r"^Page size:\s+595\.276 x 841\.89 pts \(A4\)$", process.stdout, flags=re.MULTILINE), "The English report is not A4")
+
+    spanish = REPORT_TEX_ES.read_text(encoding="utf-8")
+    english = REPORT_TEX_EN.read_text(encoding="utf-8")
+    require("\\usepackage[english]{babel}" in english, "The English report does not select English typography")
+    patterns = {
+        "labels": r"\\label\{([^}]+)\}",
+        "references": r"\\(?:ref|eqref)\{([^}]+)\}",
+        "citations": r"\\cite\{([^}]+)\}",
+        "figures": r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}",
+    }
+    for label, pattern in patterns.items():
+        require(re.findall(pattern, spanish) == re.findall(pattern, english), f"The two report editions differ in {label}")
+    require(english.count("\\begin{table}") == 11, "The English report must contain 11 tables")
+    require(english.count("\\begin{equation}") + english.count("\\begin{align}") == 19, "The English report must contain 19 equation blocks")
+    return {"figures": 4, "language": "English", "pages": 27, "tables": 11}
+
+
 def validate_public_metadata():
     """
     Verify README, citation, licenses, and path portability.
@@ -378,7 +412,8 @@ def validate_public_metadata():
     readme   = (ROOT / "README.md").read_text(encoding="utf-8")
     citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     require(REPOSITORY_URL in readme and REPOSITORY_URL in citation, "Repository URL is inconsistent")
-    require("results/adr1d_validacion_numerica.pdf" in readme, "README does not link the technical report")
+    require("results/adr1d_validacion_numerica.pdf" in readme, "README does not link the Spanish technical report")
+    require("results/adr1d_numerical_validation_en.pdf" in readme, "README does not link the English technical report")
     require("LICENSE-CONTENT" in readme and "LICENSE" in readme, "README does not explain both licenses")
     require("preferred-citation:" in citation and "type: report" in citation, "CITATION.cff does not identify the preferred technical report")
     author_tokens = ["Tinoco-Guerrero", "Gerardo", "Domínguez-Mota", "Francisco J.", "Guzmán-Torres", "J. Alberto"]
@@ -440,6 +475,7 @@ def main():
     summary = {
         "artifact_groups": validate_manifest(),
         "deliverable": run_original_deliverable_audit(),
+        "english_report": validate_english_report(),
         "metadata": validate_public_metadata(),
         "scientific_evidence": validate_scientific_summary(),
         "status": "ok",

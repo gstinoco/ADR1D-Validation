@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the preferred technical report if you use this validation package or its results."
+message: "Please cite the preferred English technical report, or the equivalent Spanish edition if that is the version consulted."
 title: "ADR1D-Validation: Reproducible Numerical Validation of ADR1D-ML and ADR1D-NN"
 type: software
 version: 1.0.0
@@ -9,7 +9,8 @@ license: MIT
 abstract: >-
   Reproducible evidence package for the independent numerical validation of
   ADR1D-ML and ADR1D-NN against a locked analytical challenge set and a
-  traditional finite-volume reference.
+  traditional finite-volume reference. The technical report is distributed in
+  equivalent English and Spanish editions.
 authors:
   - family-names: Tinoco-Guerrero
     given-names: Gerardo
@@ -34,7 +35,7 @@ keywords:
   - reproducible research
 preferred-citation:
   type: report
-  title: "Validación numérica independiente de ADR1D-ML y ADR1D-NN: Informe técnico reproducible"
+  title: "Independent Numerical Validation of ADR1D-ML and ADR1D-NN: A Reproducible Technical Report"
   version: "1.1"
   year: 2026
   month: 7
@@ -54,4 +55,3 @@ preferred-citation:
       given-names: J. Alberto
       orcid: "https://orcid.org/0000-0002-9309-9390"
       affiliation: "Universidad Michoacana de San Nicolás de Hidalgo"
-

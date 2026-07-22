@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-gstinoco%2FADR1D--Validation-181717.svg?logo=github)](https://github.com/gstinoco/ADR1D-Validation) [![Python](https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/) [![NumPy](https://img.shields.io/badge/NumPy-2.0.2-013243.svg?logo=numpy)](https://numpy.org/) [![SciPy](https://img.shields.io/badge/SciPy-1.15.2-8CAAE6.svg?logo=scipy)](https://scipy.org/) [![Report](https://img.shields.io/badge/Technical%20Report-v1.1-1F6F8B.svg)](results/adr1d_validacion_numerica.pdf) [![Protocol](https://img.shields.io/badge/Protocol-v1.0.0-6F42C1.svg)](configs/validation_protocol.json) [![Validation](https://img.shields.io/badge/Validation-passed-2E8B57.svg)](#white_check_mark-validation--reproducibility) [![Code: MIT](https://img.shields.io/badge/Code-MIT-D4AF37.svg)](LICENSE) [![Content: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-1F6F8B.svg)](LICENSE-CONTENT)
+[![GitHub](https://img.shields.io/badge/GitHub-gstinoco%2FADR1D--Validation-181717.svg?logo=github)](https://github.com/gstinoco/ADR1D-Validation) [![Python](https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/) [![NumPy](https://img.shields.io/badge/NumPy-2.0.2-013243.svg?logo=numpy)](https://numpy.org/) [![SciPy](https://img.shields.io/badge/SciPy-1.15.2-8CAAE6.svg?logo=scipy)](https://scipy.org/) [![Report](https://img.shields.io/badge/Technical%20Report-v1.1-1F6F8B.svg)](results/adr1d_numerical_validation_en.pdf) [![Languages](https://img.shields.io/badge/Languages-EN%20%7C%20ES-008C95.svg)](#page_facing_up-technical-report) [![Protocol](https://img.shields.io/badge/Protocol-v1.0.0-6F42C1.svg)](configs/validation_protocol.json) [![Validation](https://img.shields.io/badge/Validation-passed-2E8B57.svg)](#white_check_mark-validation--reproducibility) [![Code: MIT](https://img.shields.io/badge/Code-MIT-D4AF37.svg)](LICENSE) [![Content: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-1F6F8B.svg)](LICENSE-CONTENT)
 
 **Independent numerical validation of ADR1D-ML and ADR1D-NN for one-dimensional reactive contaminant transport.**
 
@@ -10,7 +10,7 @@
 
 ### :link: Quick Links
 
-[![Quick Start](https://img.shields.io/badge/Run-Quick%20Start-2E8B57)](#rocket-quick-start) [![Report](https://img.shields.io/badge/Read-Technical%20Report-1F6F8B)](results/adr1d_validacion_numerica.pdf) [![Method](https://img.shields.io/badge/Review-Validation%20Design-6F42C1)](#triangular_ruler-validation-design) [![Results](https://img.shields.io/badge/Inspect-Validation%20Results-B07AA1)](#bar_chart-validation-results) [![Data](https://img.shields.io/badge/Explore-Data%20Dictionary-008C95)](#file_cabinet-data--evidence) [![Reproduce](https://img.shields.io/badge/Run-Reproducibility-2E8B57)](#white_check_mark-validation--reproducibility) [![Citation](https://img.shields.io/badge/Use-Citation-7B5B3A)](#memo-how-to-cite) [![Team](https://img.shields.io/badge/People-Research%20Team-3B6EA8)](#scientist-research-team) [![Partners](https://img.shields.io/badge/Partners-Innovation-0B1B3A)](#factory-industry-partners-supporting-innovation) [![Contact](https://img.shields.io/badge/Support-Contact-181717)](#email-contact--support)
+[![Quick Start](https://img.shields.io/badge/Run-Quick%20Start-2E8B57)](#rocket-quick-start) [![Report](https://img.shields.io/badge/Read-Technical%20Report-1F6F8B)](results/adr1d_numerical_validation_en.pdf) [![Method](https://img.shields.io/badge/Review-Validation%20Design-6F42C1)](#triangular_ruler-validation-design) [![Results](https://img.shields.io/badge/Inspect-Validation%20Results-B07AA1)](#bar_chart-validation-results) [![Data](https://img.shields.io/badge/Explore-Data%20Dictionary-008C95)](#file_cabinet-data--evidence) [![Reproduce](https://img.shields.io/badge/Run-Reproducibility-2E8B57)](#white_check_mark-validation--reproducibility) [![Citation](https://img.shields.io/badge/Use-Citation-7B5B3A)](#memo-how-to-cite) [![Team](https://img.shields.io/badge/People-Research%20Team-3B6EA8)](#scientist-research-team) [![Partners](https://img.shields.io/badge/Partners-Innovation-0B1B3A)](#factory-industry-partners-supporting-innovation) [![Contact](https://img.shields.io/badge/Support-Contact-181717)](#email-contact--support)
 
 </div>
 
@@ -46,10 +46,11 @@
 
 ## :star2: Overview
 
-ADR1D-Validation is the public evidence package accompanying the technical
-report **“Validación numérica independiente de ADR1D-ML y ADR1D-NN”**. It
-examines two distinct learned components for the one-dimensional
-advection-dispersion-reaction problem:
+ADR1D-Validation is the public evidence package accompanying the bilingual
+technical report **“Independent Numerical Validation of ADR1D-ML and
+ADR1D-NN”**. The complete report is distributed in parallel English and
+Spanish editions. It examines two distinct learned components for the
+one-dimensional advection-dispersion-reaction problem:
 
 - [ADR1D-ML](https://github.com/gstinoco/ADR1D-ML), an inverse model that
   estimates effective transport parameters and decay resolvability from noisy
@@ -68,8 +69,8 @@ speed-up.
 
 ### :wrench: Key Capabilities
 
-- **:page_facing_up: Technical reporting:** a reviewed 27-page report and its
-  complete LaTeX source.
+- **:page_facing_up: Technical reporting:** reviewed 27-page English and
+  Spanish editions, each with its complete LaTeX source.
 - **:lock: Pre-specified validation:** protocol, challenge, execution contract,
   acceptance criteria, seeds, and chronological lock records.
 - **:bar_chart: Persisted evidence:** complete predictions and metric trees for
@@ -97,7 +98,7 @@ speed-up.
 | Numerical-reference scenarios | 16 |
 | Finite-volume executions | 48 |
 | Scientific figures | 4 PDF + 4 PNG |
-| Technical report | 27 A4 pages |
+| Technical report | 2 language editions, 27 A4 pages each |
 | Protocol version | 1.0.0 |
 | Report version | 1.1 |
 | Package version | 1.0.0 |
@@ -106,26 +107,31 @@ speed-up.
 
 ## :page_facing_up: Technical Report
 
-The principal scientific object is the reviewed PDF:
+The principal scientific object is a report available in two equivalent
+language editions. The English edition is the preferred citation for an
+international archival record; the Spanish edition remains a complete citable
+version for technical dissemination:
 
 > **Gerardo Tinoco-Guerrero, Francisco J. Domínguez-Mota, and J. Alberto
-> Guzmán-Torres. _Validación numérica independiente de ADR1D-ML y ADR1D-NN:
-> Informe técnico reproducible_. Version 1.1, Universidad Michoacana de San
+> Guzmán-Torres. _Independent Numerical Validation of ADR1D-ML and ADR1D-NN:
+> A Reproducible Technical Report_. Version 1.1, Universidad Michoacana de San
 > Nicolás de Hidalgo, 2026.**
 
-| Resource | Format | Purpose |
+| Edition or resource | Format | Purpose |
 |---|---|---|
-| [Technical report](results/adr1d_validacion_numerica.pdf) | PDF, A4 | Reviewed reading and archival deposit |
-| [Report source](results/adr1d_validacion_numerica.tex) | LaTeX | Transparent typesetting and future editorial revision |
+| [English report](results/adr1d_numerical_validation_en.pdf) | PDF, A4 | Preferred international reading and archival file |
+| [English source](results/adr1d_numerical_validation_en.tex) | LaTeX | Transparent typesetting of the English edition |
+| [Spanish report](results/adr1d_validacion_numerica.pdf) | PDF, A4 | Complete Spanish-language technical edition |
+| [Spanish source](results/adr1d_validacion_numerica.tex) | LaTeX | Transparent typesetting of the Spanish edition |
 | [Citation metadata](CITATION.cff) | CFF 1.2 | Machine-readable software and preferred-report citation |
 | [Release manifest](results/release_manifest.json) | JSON | Integrity record for the scientific package |
 
-The report is written in Spanish because it is also intended for technical
-dissemination in the authors' academic context. This English README provides a
-self-contained description of the repository, but it does not replace the
-full methods, diagnostics, interpretation, and references in the report.
+Both editions contain the same equations, numerical values, figures, tables,
+criteria, conclusions, and references. Their labels and citation structure are
+checked programmatically, and both PDFs contain 27 A4 pages. Readers may cite
+the language edition they actually consulted.
 
-### English Abstract
+### Report Abstract
 
 This study validates two frozen learned models for one-dimensional reactive
 transport using a newly generated, pre-specified analytical challenge set.
@@ -158,6 +164,8 @@ are not interpreted as interchangeable speed-ups across different tasks.
 |   |-- challenge_analytical_field.csv
 |   `-- challenge_sensor_observations.csv
 |-- results/
+|   |-- adr1d_numerical_validation_en.pdf
+|   |-- adr1d_numerical_validation_en.tex
 |   |-- adr1d_validacion_numerica.pdf
 |   |-- adr1d_validacion_numerica.tex
 |   |-- adr1d_ml_challenge_predictions.csv
@@ -242,10 +250,17 @@ A successful check ends with a compact summary equivalent to:
 
 ```json
 {
+  "artifact_groups": {
+    "report": 4
+  },
   "deliverable": {
     "figures": 8,
     "report_pages": 27,
     "source_modules": 10
+  },
+  "english_report": {
+    "pages": 27,
+    "tables": 11
   },
   "status": "ok"
 }
@@ -268,8 +283,8 @@ The command is read-only and does not load ADR1D-ML or ADR1D-NN.
   <tbody>
     <tr>
       <td><b>1) Read the report</b></td>
-      <td><a href="results/adr1d_validacion_numerica.pdf"><code>results/adr1d_validacion_numerica.pdf</code></a></td>
-      <td>Review the complete methods, diagnostics, interpretation, and limitations.</td>
+      <td><a href="results/adr1d_numerical_validation_en.pdf">English PDF</a> · <a href="results/adr1d_validacion_numerica.pdf">Spanish PDF</a></td>
+      <td>Choose either complete language edition to review the methods, diagnostics, interpretation, and limitations.</td>
     </tr>
     <tr>
       <td><b>2) Audit the release</b></td>
@@ -671,8 +686,8 @@ python scripts/validate_release.py
 
 This read-only check does not load either model. It verifies the release
 manifest, scientific status records, selected report values, CSV row counts,
-eight figure files, 10 source modules, the 27-page PDF, citation metadata,
-license files, and path portability. A successful run ends with
+eight figure files, 10 source modules, both 27-page report editions, citation
+metadata, license files, and path portability. A successful run ends with
 `"status": "ok"`.
 
 ### Level 2: Complete Metric Recalculation
@@ -718,20 +733,22 @@ models or execute inference. Outputs are directed away from the canonical
 
 ### Rebuild the Technical Report
 
-The LaTeX source resolves figure paths relative to `results/`, so build it from
-that directory:
+Both LaTeX sources resolve figure paths relative to `results/`, so build them
+from that directory:
 
 ```bash
 cd results
+latexmk -pdf -interaction=nonstopmode -halt-on-error adr1d_numerical_validation_en.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error adr1d_validacion_numerica.tex
+latexmk -c adr1d_numerical_validation_en.tex
 latexmk -c adr1d_validacion_numerica.tex
 cd ..
 ```
 
-The distributed PDF uses a fixed build date and trailer identifier to support
-deterministic reconstruction. LaTeX engine, font, and package differences can
-still affect binary equality on another installation; scientific content and
-page rendering should therefore also be inspected.
+The distributed PDFs use fixed build dates and distinct trailer identifiers to
+support deterministic reconstruction. LaTeX engine, font, and package
+differences can still affect binary equality on another installation;
+scientific content and page rendering should therefore also be inspected.
 
 ### Reproducibility Boundaries
 
@@ -777,9 +794,10 @@ tables in this README, and a matching digest must not be interpreted as proof
 of scientific validity by itself.
 
 The public [`release_manifest.json`](results/release_manifest.json) covers 20
-core evidence files, eight figures, two report files, and 10 original source
+core evidence files, eight figures, four report files, and 10 original source
 modules. The release validator checks those records and then applies semantic
-tests to statuses, dimensions, key results, citation metadata, and licenses.
+tests to statuses, dimensions, key results, equivalence between language
+editions, citation metadata, and licenses.
 
 The only publication-specific normalization applied to the evidence was the
 replacement of local absolute path labels in `computational_cost.json` with
@@ -830,11 +848,12 @@ the PDF and citation metadata.
 
 The archival record should contain:
 
-1. `results/adr1d_validacion_numerica.pdf` as the principal file;
-2. the tagged GitHub release archive as the complete reproducibility package;
-3. the LaTeX source when source-level preservation is desired;
-4. the three principal investigators as creators, in the order used here;
-5. resource type **Technical report**, publication year 2026, and CC BY 4.0
+1. `results/adr1d_numerical_validation_en.pdf` as the principal international file;
+2. `results/adr1d_validacion_numerica.pdf` as the complete Spanish edition;
+3. the tagged GitHub release archive as the complete reproducibility package;
+4. both LaTeX sources for source-level preservation;
+5. the three principal investigators as creators, in the order used here;
+6. resource type **Technical report**, publication year 2026, and CC BY 4.0
    for the report-centered Zenodo record.
 
 The root `CITATION.cff` describes the repository as software while identifying
@@ -848,11 +867,11 @@ treated as final.
 
 ## :memo: How to Cite
 
-### Preferred Technical-Report Citation
+### Preferred English Technical-Report Citation
 
 Tinoco-Guerrero, G., Domínguez-Mota, F. J., and Guzmán-Torres, J. A. (2026).
-*Validación numérica independiente de ADR1D-ML y ADR1D-NN: Informe técnico
-reproducible*. Version 1.1. Universidad Michoacana de San Nicolás de Hidalgo.
+*Independent Numerical Validation of ADR1D-ML and ADR1D-NN: A Reproducible
+Technical Report*. Version 1.1. Universidad Michoacana de San Nicolás de Hidalgo.
 https://github.com/gstinoco/ADR1D-Validation
 
 ```bibtex
@@ -860,14 +879,25 @@ https://github.com/gstinoco/ADR1D-Validation
   author      = {Tinoco-Guerrero, Gerardo and
                  Domínguez-Mota, Francisco J. and
                  Guzmán-Torres, J. Alberto},
-  title       = {Validación numérica independiente de ADR1D-ML y ADR1D-NN:
-                 Informe técnico reproducible},
+  title       = {Independent Numerical Validation of ADR1D-ML and ADR1D-NN:
+                 A Reproducible Technical Report},
   institution = {Universidad Michoacana de San Nicolás de Hidalgo},
   year        = {2026},
-  note        = {Version 1.1},
+  note        = {Version 1.1; English edition},
   url         = {https://github.com/gstinoco/ADR1D-Validation}
 }
 ```
+
+### Spanish Edition
+
+Tinoco-Guerrero, G., Domínguez-Mota, F. J., and Guzmán-Torres, J. A. (2026).
+*Validación numérica independiente de ADR1D-ML y ADR1D-NN: Informe técnico
+reproducible*. Version 1.1. Universidad Michoacana de San Nicolás de Hidalgo.
+https://github.com/gstinoco/ADR1D-Validation
+
+The two citations identify language editions of the same technical report, not
+separate validation studies. Cite the edition consulted and use the eventual
+archival DOI once it has been assigned.
 
 Please also cite the specific upstream work used in an analysis:
 
