@@ -336,13 +336,11 @@ where $C$ is concentration, $v_{\mathrm{eff}}$ is effective velocity,
 $D_{\mathrm{eff}}$ is effective dispersion, and $\lambda$ is a first-order
 decay rate. A finite rectangular inlet pulse is imposed at $x=0$:
 
-$$
-\frac{C(0,t)}{C_0}=
-\begin{cases}
-1, & t_0\leq t<t_0+\tau,\\
-0, & \text{otherwise}.
-\end{cases}
-$$
+```math
+\frac{C(0,t)}{C_0}=\mathbf{1}_{[t_0,t_0+\tau)}(t).
+```
+
+The indicator equals one while the source pulse is active and zero otherwise.
 
 The [ADR1D benchmark](https://github.com/gstinoco/ADR1D) supplies the analytical
 reference and parameter domain. The present repository adds an unseen
